@@ -1,12 +1,14 @@
-# Honeywell Technologies
+# Honeywell Technologies Virtual Laboratory
 
-An interactive virtual laboratory for the sample items from `Specs_33_Sample_Items_Print.docx`, built with React and Vite in a light-only theme.
+An interactive virtual laboratory for the sample items in `Specs_33_Sample_Items_Print.docx`. It is built with React, Vite and three.js, uses a light-only theme in the Honeywell Technologies red and white, and runs every kit as an interactive 3D simulation.
 
-The flow is three steps:
+There are **31 kits** and **103 experiments**. The Raspberry Pi 5 and FPGA kits from the Word file have been removed.
 
-1. **Kits**: every kit appears as its own card. Search, or filter by discipline and level (UG Lab, PG Lab, Equipment).
-2. **Experiments**: selecting a kit lists its experiments, along with the full specification from the Word file.
-3. **Simulation**: selecting an experiment opens a working model of the kit for that experiment.
+The site works in three steps:
+
+1. **Kits.** Every kit appears as a card with an image of its 3D model. Search, or filter by discipline and level (UG Lab, PG Lab, Equipment).
+2. **Experiments.** Selecting a kit lists its experiments, with the full specification from the Word file.
+3. **Simulation.** Selecting an experiment opens the 3D model of the kit, set up for that experiment.
 
 ## Getting started
 
@@ -21,50 +23,63 @@ npm run preview   # serve the production build
 
 The build uses relative paths and hash routing, so `dist/` can be hosted from any static server or sub-folder without extra configuration.
 
-## What each simulation includes
+## The simulation page
 
 | Area | Description |
 | --- | --- |
-| Controls | Sliders, selectors and switches. Their ranges follow the kit specification wherever it gives one. |
-| Live apparatus | An animated drawing of the kit with its displays, meters and oscilloscope. Some kits also have switches you can click directly on the board. |
-| Guide | Aim, principle, formula and a tick-off procedure. |
-| Observations | Record readings one at a time, or use **Auto-collect** to run the whole series. Export to CSV. |
-| Graph | Readings, best-fit line, kit response curve and a live marker. Hover for values. |
-| Result | The calculated answer, compared with the expected value and shown as a percentage difference. |
+| 3D kit | The kit on a lab bench. Drag the background to look around, and use the view buttons to jump to the instruments. Knobs, switches, keys, sockets and patch cords on the model all work. |
+| Controls | A column beside the simulation with the same settings as sliders and selectors, plus **Record reading** and **Auto-collect**. On narrow screens it moves below the simulation. |
+| Live readings | The values the kit's own displays and meters show. |
+| Corner windows | Oscilloscope traces, eyepiece views, camera images and data logger plots, drawn live. |
+| Particle view | A canvas showing what happens inside the apparatus: electrons in a conductor, charge on a capacitor, holes in a Hall crystal, neon atoms being excited, photons, magnetic moments and more. |
+| Guide | Aim, principle, formula and a procedure you can tick off. |
+| Observations | Readings recorded one at a time or by Auto-collect, exportable to CSV. |
+| Graph | Readings, best-fit line, the kit's response curve and a live marker. |
+| Result | The calculated answer, compared with the expected value as a percentage difference. |
 
-Readings include a small random scatter so that results behave like real measurements. Time-varying displays can be paused or run at ¼× and 3×.
+Readings include a small random scatter so results behave like real measurements. The simulation can be paused or run at ¼× and 3×.
 
-## Realistic kit panels and particle view
+Each kit also refuses a reading when the apparatus is not ready, as the real one would. Examples include a switched-off supply, an unplugged cord, an untuned control, unfocused rings or a drop that is not yet balanced.
 
-- **PhyUGEx-61 (Series and Parallel LCR)** is a replica of the real front panel. Drag between brass sockets to patch cords and click a cord to remove it. The knobs turn, and the arrow and waveform buttons work. Any wiring is solved as an AC network, so an open circuit, a short circuit or an alternative layout behaves accordingly.
-- **PhyUGEx-242 (Full Adder and Subtractor)** is a replica of the real front panel. Flip the eight Logic Input switches, patch them to the gates, and read Logic Output LEDs, the BCD displays and the 16x4 LCD. Clock outputs, the +5 V supply and the mono pulser all work. Every wiring is evaluated as 74-series logic, so an unconnected gate input reads high and two outputs driving one socket are reported as a conflict.
-- **PhyUGEx-2 (Bar Pendulum)** is a 3D model built from the kit's product photo: steel bar with real holes on a knife-edge stand, photogate, digital stop clock and oscillation counter. Drag the bar or bob to release it, click a hole to re-hang the bar, and press the buttons on the instruments. The counter times real crossings of the photogate. 
-- **PhyUGEx-11 (Coupled Oscillator)** is a 3D model built from the kit drawings: two 1 m pendulums, a helical spring on sliding clamps, magnetic sensors and the data acquisition unit with a live LCD, bar graph and buttons. The pendulums follow the coupled equations of motion, so normal modes and beats appear from any release.
-- The 3D engine (three.js, about 140 kB compressed) loads only for the 3D kits.
-- **PhyUGEx-44 (Network Theorems Trainer)** is a flat replica of the kit's front panel. Every socket belongs to one network solved by nodal analysis, so the voltmeter and ammeter read whatever is wired. Range knobs, S1 and S2, load controls and the mains switch all work, and all six theorems are measured from the meters.
-- **PhyUGEx-48 (Brewster's Law: Refractive Index)** is a 3D model of the kit: laser and polarizer on the bench, glass plate on the goniometer and a detector on a rotating arm. The reflected beam leaves at twice the incidence angle, and the detector reads it only when aligned.
-- **PhyUGEx-74 (Thomson e/m)** is a 3D model of the kit: CRT on an acrylic stand over the graduated wing bridge, bar magnets, compass and HT/LT supply. Sliding the magnets and turning the deflection knob move the spot on the screen.
-- **PhyUGEx-80 (Michelson Interferometer)** is a 3D model of the kit on its lab jack, with an inset showing the live fringes through the telescope. The coarse drum and fine micrometer move M1, and the screws behind M2 tilt it.
-- **PhyUGEx-98 (Hall Effect in Semiconductor)** is a 3D model of the kit: electromagnet, Ge crystal with oven in the pole gap, InAs probe and the three instruments, all operated on their panels. The sample voltage shown by VH/VR assumes an 80 Ω crystal.
-- **PhyUGEx-101 (Fermi Energy of Copper)** is a 3D model of the kit: copper coil in a glass tube, beaker of hot water, kettle, probe thermometer and the constant current unit. The kettle heats the water and the four leads can be unplugged.
-- **PhyUGEx-105 (Dielectric Constant)** and **PhyUGEx-107 (B–H Curve)** are 3D models of their kits. The dielectric kit has a working capacitance meter, liquid cell and micrometer plates. The B–H kit draws the live loop on its oscilloscope.
-- **PhyUGEx-161 (Quincke's Method)** and **PhyUGEx-201 (Angstrom's Thermal Conductivity)** are 3D models of their kits. Quincke's kit has a travelling microscope with a live eyepiece view; on the model the rise is drawn larger than true size. Angstrom's kit shows the heat wave moving along the copper rod and the four thermocouple readings.
-- **PhyUGEx-214 (Faraday's Law)** and **PhyUGEx-250 (Seebeck and Peltier Effect)** are 3D models of their kits. In the Faraday kit the magnet falls in slow motion and the data logger inset plots the EMF pulse as it passes the coil. In the Seebeck and Peltier kit the sinks change colour with temperature, and swapping the leads reverses the heat flow.
-- **PhyUGEx-256 and PhyPGEx-17 (Franck–Hertz)** and **PhyUGEx-262 (Lissajous Figures)** are 3D models of their kits. The Franck–Hertz tube shows orange glow layers appearing as the voltage rises. The Lissajous trainer has draggable patch cords between its console and the oscilloscope.
-- **PhyUGEx-268 (Operational Amplifier)** and **PhyUGEq-1 (Dual Regulated DC Power Supply)** are 3D models of their kits, and **PhyPGEx-18** shares the 3D Brewster model. The op-amp board shows each circuit with patch cords and live input and output traces. The supply has a working keypad, encoder and rheostat load.
-- **PhyPGEx-20, PhyPGEx-32, PhyPGEx-61, PhyPGEx-62, PhyPGEx-103 and PhyPGEx-114** are 3D models of their kits, built with the shared helpers in `src/sims/kit3d.jsx`.
-- **EleEq-37 (AM Modulation Trainer)** is a pair of 3D boards drawn from the transmitter and receiver pictures, with live patch cords, a tuning dial and the fault DIP switches.
-- **All 31 kits run as interactive 3D simulations.** PhyUGEx-35 and EleEq-47 are full 3D scenes. PhyUGEx-44, PhyUGEx-61 and PhyUGEx-242 keep their live, wireable panels inside a 3D instrument case drawn with `CSS3DRenderer`.
-- **Particle view:** every experiment has a live canvas below the kit showing what happens inside it: electrons in the copper lattice, charge and magnetic field in L and C, holes in a Hall crystal, neon atoms being excited, photons, magnetic moments and more.
-- Conductors on the kit show moving electrons and light beams show moving photons.
+## The 3D kits
 
-Other kits use a realistic black or PCB instrument style. They can be rebuilt as exact replicas like the LCR kit once a photo of each front panel is available.
+Each model is built from the reference picture of the kit, with its front panels drawn in the picture's own layout.
 
-The patchable panels live in `src/sims/lcrpanel.jsx` and `src/sims/adderpanel.jsx`. Particle scenes live in `src/components/Micro.jsx`, and `src/sims/micromap.js` connects each experiment to its scene.
+| Code | Kit | What you can operate |
+| --- | --- | --- |
+| PhyUGEx-2 | Bar Pendulum | Release the bar or bob, re-hang the bar from any hole, and use the photogate, stop clock and counter. |
+| PhyUGEx-11 | Coupled Oscillator | Release either pendulum, slide the spring clamps, and read the data unit's LCD and bar graph. |
+| PhyUGEx-35 | Air Wedge | Drag the micrometer drum of the travelling microscope, change the wedge object, and work the spherometer screw. Live eyepiece view. |
+| PhyUGEx-44 | Network Theorems Trainer | The full wireable panel in a 3D case, with patch cords, pots, supplies and meters. |
+| PhyUGEx-48, PhyPGEx-18 | Brewster's Law | Turn the goniometer table, polarizer wheel and detector arm. ZERO, GAIN and POWER work on the output unit. |
+| PhyUGEx-61 | Series and Parallel LCR | The full wireable panel in a 3D case, with generator keys and knobs. |
+| PhyUGEx-74 | Thomson e/m | Slide the bar magnets and set the deflection voltage. The spot moves on the CRT. |
+| PhyUGEx-80 | Michelson Interferometer | Coarse drum, fine micrometer and M2 tilt screws, with live fringes in the telescope. |
+| PhyPGEx-20 | Refractive Index of Thin Glass | The same interferometer with a glass sheet on a rotating stage in the M1 arm. |
+| PhyUGEx-98 | Hall Effect | Electromagnet, Ge crystal with oven, InAs probe, and three working instruments. |
+| PhyUGEx-101 | Fermi Energy of Copper | Kettle heating, probe thermometer and the constant current unit. |
+| PhyUGEx-105 | Dielectric Constant | Capacitance meter, liquid cell and micrometer plates. |
+| PhyUGEx-107 | B–H Curve | Curve tracer and oscilloscope with the live loop. |
+| PhyPGEx-62 | B–H Curve: Hard and Soft | U–I core with coils, sensors and logger. A DRIVE knob sets the field and a swappable spare I-core changes the material. |
+| PhyUGEx-161 | Quincke's Method | Travelling microscope with live eyepiece, and the magnet supply. |
+| PhyUGEx-201 | Angstrom's Method | The heat wave moves along the copper rod, with four thermocouple readings. |
+| PhyUGEx-214 | Faraday's Law | Drop the magnet through the coil in slow motion. A data logger window plots the EMF pulse. |
+| PhyUGEx-250 | Seebeck and Peltier Effect | Heat sinks change colour with temperature, and swapping the leads reverses the heat flow. |
+| PhyUGEx-256, PhyPGEx-17 | Franck–Hertz | Neon tube with orange glow layers, four knobs, MODE keys, sensors and logger. |
+| PhyUGEx-262 | Lissajous Figures | Sloped trainer and CRO with draggable patch cords and a live X-Y display. |
+| PhyUGEx-268 | Operational Amplifier Trainer | Generator keys and knobs, V₁ and V₂ supplies, µA741 chips and movable resistor and capacitor plugs, with input and output traces. |
+| PhyUGEq-1 | Dual Regulated DC Power Supply | Working keypad, encoder, STEP, CH A/B, OUTPUT and POWER. Channel A drives a rheostat and channel B a 4.9 Ω resistor. |
+| PhyUGEx-242 | Full Adder and Subtractor | The full wireable logic panel in a 3D case, with input switches, LEDs and displays. |
+| PhyPGEx-32 | Ultrasonic Interferometer | Liquid cell with micrometer and standing waves, analogue µA meter and 1/2/3 MHz keys. The distance unit has transducers and a draggable target. |
+| PhyPGEx-61 | Curie Temperature | Kettle heating, probe thermometer with HOLD, and the two-display kit unit. |
+| PhyPGEx-103 | Zeeman Effect | Electromagnet with Hg lamp, optical bench with a movable L2 lens, polarizer, power supply and Gauss meter. A camera window shows the rings. |
+| PhyPGEx-114 | Millikan's Oil Drop | Atomizer, field plates, LED, voltage knob, FIELD REVERSE, stop clock and a monitor with the tracked drop. |
+| EleEq-37 | AM Modulation Trainer | Transmitter and receiver boards with telescopic antennas, patch cords, tuning dial, level knobs, fault DIP switches and a CH1 probe. |
+| EleEq-47 | Fiber Optic Trainer | Tx and Rx unit with live fibre, bend mandrel, cable spools, NA jig and fault test points. |
+
+The Network Theorems, LCR and Full Adder panels are the original wireable panels shown inside a 3D instrument case with `CSS3DRenderer`, so every socket, cord and switch keeps working. Wiring is most accurate from the Front view.
 
 ## Kits and experiments
-
-There are 31 kits and 103 experiments.
 
 | Code | Kit | Experiments |
 | --- | --- | ---: |
@@ -100,7 +115,7 @@ There are 31 kits and 103 experiments.
 | EleEq-37 | AM Modulation Trainer | 7 |
 | EleEq-47 | Fiber Optic Trainer | 8 |
 
-Where the Word file lists functional or experimental capabilities, those became the experiments. Where it gives only a title and hardware list, experiments were chosen to fit that hardware. For the Raspberry Pi, which lists no experiments, they are drawn from its GPIO, thermal and power specifications.
+Where the Word file lists functional or experimental capabilities, those became the experiments. Where it gives only a title and a hardware list, experiments were chosen to fit that hardware.
 
 ## Project structure
 
@@ -108,25 +123,39 @@ Where the Word file lists functional or experimental capabilities, those became 
 src/
   main.jsx, App.jsx        Entry point and routes
   styles.css               Design tokens and all styling (light theme only)
+  assets/                  Self-hosted fonts (Abril for headings, Figtree for text)
   data/
     specs.json             Specifications extracted from the Word file
     kits.js                Source list of kits, used to generate catalog.json
     catalog.js             Kit names and experiment titles for the catalog pages
-    sims.js                Loads a kit's simulations on demand
-  pages/                   Home (kits), Kit (experiments), Experiment (simulation)
+    sims.js                Loads each kit's 3D simulation on demand
+  pages/                   Home (hero and kits), Kit (experiments), Experiment (simulation)
   components/
-    Workbench.jsx          Runs any experiment: controls, clock, table, result
+    Workbench.jsx          Runs any experiment: controls, clock, readings, table, result
     Graph.jsx              Chart for readings, fit and response curve
+    Micro.jsx              Particle views
   lib/
     router.jsx             Minimal hash router
     math.js                Fitting, peak finding, complex numbers, formatting
-    parts.jsx              Drawing library: panels, LCDs, scope, schematic symbols
-  sims/                    Experiment definitions, grouped by subject
+    parts.jsx              SVG drawing library used by the panels and fallbacks
+  sims/
+    electrical.jsx, optics.jsx, magnetism.jsx, thermal.jsx, modern.jsx, comm.jsx, mechanics.jsx
+                           The physics and experiment definitions, grouped by subject
+    studio3d.js            Shared renderer, lighting, camera and canvas textures
+    kit3d.jsx              Shared 3D toolkit: bench, instrument units, knobs, sockets,
+                           seven-segment displays, pointer handling and the React stage
+    panel3d.jsx            Puts a wireable SVG panel inside a 3D case (CSS3DRenderer)
+    *3d.jsx                One file per 3D kit, for example millikan3d.jsx or am3d.jsx
+    lcrpanel.jsx, networkpanel.jsx, adderpanel.jsx, brewsterpanel.jsx
+                           The wireable panels and the Brewster panel logic
+    micromap.js            Connects each experiment to its particle view
+scripts/catalog.mjs        Builds src/data/catalog.json before dev and build
+public/thumbs/             A WebP image of each experiment, taken from its 3D model
 ```
 
 ## Adding or changing an experiment
 
-Experiments are plain objects, added to a kit's array in `src/sims/`. `Workbench` runs them all the same way:
+Experiments are plain objects in a kit's array in `src/sims/`, and `Workbench` runs them all the same way:
 
 ```js
 {
@@ -136,7 +165,7 @@ Experiments are plain objects, added to a kit's array in `src/sims/`. `Workbench
   aim, formula, principle, steps,        // guide content
   controls: [num('L', 'Length', 0.2, 1, 0.05, 0.75, 'm')],
   out: (v, t) => ({ T: 2 * Math.PI * Math.sqrt(v.L / 9.78) }),  // the physics
-  Stage: ({ v, o, t, set }) => <Svg>...</Svg>,                  // the apparatus
+  Stage: ({ v, o, t, set }) => <Svg>...</Svg>,                  // flat fallback drawing
   read: (v, o) => [['Period', o.T.toFixed(3), 's']],            // live readouts
   columns: [['L', 'L (m)', 2], ['T2', 'T² (s²)', 3]],           // key, heading, decimals
   sample: (v, o) => ({ L: v.L, T2: o.T ** 2 }),                 // one recorded row
@@ -146,28 +175,64 @@ Experiments are plain objects, added to a kit's array in `src/sims/`. `Workbench
 }
 ```
 
-`columns`, `graph`, `sweep` and `analyse` are optional. A `sample` function can return `{ error: 'message' }` to refuse a reading, for example when an instrument is not yet balanced.
+`columns`, `graph`, `sweep` and `analyse` are optional. A `sample` function can return `{ error: 'message' }` to refuse a reading.
+
+A 3D kit wraps those experiments without changing their physics, as in `src/sims/curie3d.jsx`:
+
+```js
+export const curie3D = curieKit.map((e) => ({
+  ...e,
+  wide: true,                                  // stage beside the controls column
+  state: () => ({ pwr: true, cP: true }),      // extra switches that live only on the model
+  sample: (v, o) => (v.pwr ? e.sample(v, o) : { error: 'The kit is off. Press POWER.' }),
+  Stage: stage3D(e, (host, api) => build(host, api, e), { labels, hint }),
+}))
+```
+
+`build` uses `kitScene` from `kit3d.jsx` to make the bench, `unit()` to add an instrument whose front panel is drawn in the reference picture's coordinates, and `listen()` to wire its knobs, keys and sockets to `api.set`. If WebGL is not available, the stage falls back to the flat `Stage` drawing.
+
+After changing a model, regenerate its card image in `public/thumbs/<kit-id>-<experiment-id>.webp`.
 
 ## Simulation notes
 
-These are teaching models based on standard physics and the supplied specifications, not calibrated replicas of the hardware. Where the document does not give a value, typical textbook values are used.
+These are teaching models based on standard physics and the supplied specifications, not calibrated replicas of the hardware. Where the document gives no value, typical textbook values are used.
 
 - **Quincke's Method** covers both surface tension (from the title) and magnetic susceptibility (which the listed hardware is designed for).
 - **Fermi energy** uses an effective lattice constant `Y·a = 36 N/m`.
-- **Zeeman** treats the 546.1 nm line as a normal Zeeman triplet for simplicity.
-- **LCR panel** follows the photo of the kit (0.01 µF, 0.1 µF, 750 Ω, 1 kΩ, 100 mH, 200 mH, up to 1 MHz, 10 V p-p), which differs from the Word file's 8 Vpp and 1/10/60 kHz ranges. Assumptions: a 600 Ω generator output, a 15 Ω inductor winding, printed links between adjacent sockets, and a meter that reads across R in series use and line current in parallel use.
-- **Full Adder panel** follows the photo of the kit. The breadboard is drawn but not patchable. Assumptions: gate outputs of 3.4 V high and 0.2 V low, a common ground, Logic Output LEDs that stay off when unconnected, and clocks above 1 Hz shown as a dimmed LED because they switch too fast to see.
-- **Network panel** follows the kit picture. Assumptions: each block's internal source is isolated from the others, V is 12 V in the Thevenin and maximum power blocks, the LOAD RL stepper values are added controls, the Tellegen bridge values (R1 and R4 = 1 kΩ, R2 and R3 = 2.2 kΩ, R5 = 1 kΩ) are not given in the picture, and the ammeter has a 0.1 Ω shunt.
-- **Brewster panel** follows the kit picture. The laser is powered from the output unit, and the detector arm follows the reflected beam by default.
-- **Regulated DC Power Supply** follows the single-channel 0–30 V, 0–3 A specification.
+- **Zeeman** treats the 546.1 nm line as a normal Zeeman triplet. The supply's V knob limits the magnet current through a 5 Ω coil.
+- **Franck–Hertz:** the CONTROL G1 knob changes its own display only.
+- **Lissajous RLC network** uses 1 kΩ, 100 mH and 0.01 µF as printed on the trainer, so resonance is 5.03 kHz. AMPL and the CRO knobs change the trace size and position, not the readings.
+- **Operational amplifier:** the variable supplies are labelled V₁ and V₂ and run from −5 to +5 V, the range the experiments use, rather than the printed +1.5…+10 V and −1.5…−10 V. Each circuit comes pre-wired, and only the ringed resistor and capacitor plugs and the supply cords move.
+- **Dual DC supply:** channel B can be set from the keypad, but readings and Record use channel A.
+- **Curie temperature** reads the secondary in mV to match the kit display.
+- **Ultrasonic interferometer** offers 1, 2 and 3 MHz crystals, and FREQ ADJ must be at the centre to record.
+- **AM trainer:** the fault DIP switches set faults F1 to F15. F16 is available from the controls.
+- **LCR panel** follows the photo of the kit (0.01 µF, 0.1 µF, 750 Ω, 1 kΩ, 100 mH, 200 mH, up to 1 MHz, 10 V p-p), which differs from the Word file's 8 Vpp and 1/10/60 kHz ranges. It assumes a 600 Ω generator output, a 15 Ω inductor winding, printed links between adjacent sockets, and a meter across R in series use and in the line in parallel use.
+- **Full Adder panel** follows the photo. The breadboard is drawn but not patchable. Gate outputs are 3.4 V high and 0.2 V low, and clocks above 1 Hz show as a dimmed LED.
+- **Network panel** follows the kit picture. Each block's internal source is isolated, V is 12 V in the Thevenin and maximum power blocks, the LOAD RL stepper values are added controls, the Tellegen bridge values are assumed, and the ammeter has a 0.1 Ω shunt.
+
+## Design
+
+- Honeywell Technologies red (`#e20001`) on white, with Abril headings and Figtree text.
+- The home page hero shows an animated oscilloscope with sample results instead of a photograph.
+- Every 3D scene uses the same light bench and wall, so all kits match the site theme.
+- View buttons, corner windows and cards share the red accent, rounded corners and soft shadows.
 
 ## Tech stack
 
-React 19 and Vite 8, with one self-hosted font (Figtree, Latin subset). Routing is a small built-in hash router, and all the simulations and charts are hand-written SVG and canvas, so no routing, chart or graphics library is required.
+- React 19 and Vite 8.
+- three.js for the 3D kits, including `OrbitControls`, `RoomEnvironment` and `CSS3DRenderer`.
+- A small built-in hash router.
+- Hand-written SVG and canvas for charts, panels, displays and particle views.
+- No routing, chart or UI library.
 
 ## Performance
 
-- The catalog pages load only kit names and images. Each kit's simulation code is fetched when one of its experiments is opened.
+- The catalog pages load only kit names and images. A kit's 3D model and physics are fetched when one of its experiments is opened.
+- three.js loads only on a simulation page. Each kit's own code is typically 6 to 30 kB compressed.
+- Each 3D scene renders only when something changes, frees its GPU resources when you leave the page, and stops animating when scrolled out of view.
 - `src/data/catalog.json` is generated from `src/data/kits.js` by `npm run catalog`, which also runs before `dev` and `build`.
-- `public/thumbs/` holds a WebP image of each experiment. Replace these if a kit's drawing changes.
-- Animations run at 30 frames a second and stop when they are scrolled out of view.
+
+## Testing
+
+All 103 experiments were run automatically against the production build, recording a full Auto-collect series in each. All of them completed without page errors, and every computed result was within 5% of its expected value. Pages were also checked at phone width for horizontal overflow. The automated runs used software (SwiftShader) graphics in headless Chrome. Real browsers with a graphics card render the scenes much faster.
