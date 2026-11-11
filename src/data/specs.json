@@ -1,0 +1,1759 @@
+[
+ {
+  "no": 1,
+  "code": "PhyUGEx-2",
+  "title": "Determination of g using bar pendulum",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "Microcontroller-based digital system for measurement of the acceleration due to gravity.",
+     "Suitable for laboratory use; supports pendulum and free-fall experiments."
+    ]
+   },
+   {
+    "title": "Physical Parameters",
+    "items": [
+     "Bar rod length: 0.95 m – 1.10 m",
+     "Bar rod breadth: 4.2 cm – 4.5 cm",
+     "Bar rod width: 0.6 cm – 0.8 cm",
+     "Number of holes: >15",
+     "Hole spacing: ≤ 5 cm",
+     "Hole diameter: 0.8 cm – 1.0 cm"
+    ]
+   },
+   {
+    "title": "Electrical Requirements",
+    "items": [
+     "Mains supply: 100–240 V, 0.2 A, 50/60 Hz",
+     "Adaptor output: Regulated 5 V supply",
+     "Includes surge protection and stable power regulation."
+    ]
+   },
+   {
+    "title": "Functional Capabilities",
+    "items": [
+     "Supports simple pendulum and compound pendulum experiments.",
+     "Integrated acceleration measurement and object free-fall method experiments.",
+     "Provides auto calculation and manual calculation facilities.",
+     "Determines acceleration due to gravity using compound pendulum.",
+     "Calculates radius of gyration and moment of inertia of compound pendulum about its centre of gravity."
+    ]
+   },
+   {
+    "title": "Operational Features",
+    "items": [
+     "Microcontroller-based LCD display with automatic/manual modes.",
+     "Integrated digital stopwatch.",
+     "Self-contained, easy-to-operate design.",
+     "Supported with user manuals, experiment manuals, installation documentation, and training materials in either printed or electronic format.",
+     "Durable and cost-effective construction."
+    ]
+   }
+  ]
+ },
+ {
+  "no": 2,
+  "code": "PhyUGEx-11",
+  "title": "Determination of frequency of a coupled oscillator",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "Setup with two identical pendulums and spring couplings",
+     "Features to record pendulum oscillations on computer dashboard through software"
+    ]
+   },
+   {
+    "title": "Display and Interface",
+    "items": [
+     "Microcontroller-based digital display with 16×2 LCD",
+     "Bar graph facility included",
+     "PC interfacing via RS232/USB only",
+     "Data acquisition unit for computer interface"
+    ]
+   },
+   {
+    "title": "Technical Specifications",
+    "items": [
+     "Pendulum length: 1 m",
+     "Spring length: 20–21 cm",
+     "Spring diameter: 28–30 mm",
+     "Spring constant: 2.5–3 N/m",
+     "Power supply outputs: 12 V and 5 V, current rating 500 mA",
+     "Detector: magnetic field sensor only",
+     "Least count: 1 second"
+    ]
+   },
+   {
+    "title": "Functional Capabilities",
+    "items": [
+     "Study and determination of two normal modes of coupled oscillator; record oscillations to determine time periods (T₀ and T₁) on dashboard software",
+     "Study resonance mode; record oscillations to determine coupled time period (T꜀) and beat time period (Tᵦ); compare experimental values with calculated values on software window",
+     "Determine degree of coupling and coupling constant for different coupling lengths; study variance of T₀ and T₁ with coupling constant using software",
+     "Determine spring constant using coupled oscillator"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 3,
+  "code": "PhyUGEx-35",
+  "title": "Air wedge-determination of thickness ofan object",
+  "groups": [
+   {
+    "title": "Integrated Compact Design",
+    "items": [
+     "Stand-alone experimental setup incorporating sodium source, microscope, HID ballast transformer, and complete optical arrangement within a single compact body"
+    ]
+   },
+   {
+    "title": "Mechanical Construction",
+    "items": [
+     "Rigid aluminium cast body",
+     "Overall weight approx. 10–15 kg ensuring stability and vibration-free operation"
+    ]
+   },
+   {
+    "title": "Reflector Arrangement",
+    "items": [
+     "Reflector mounted at ~45° angle",
+     "Eliminates requirement of special alignment adjustments"
+    ]
+   },
+   {
+    "title": "Reflector Movement",
+    "items": [
+     "Smooth and precise X–Y translational movement for accurate positioning and ease of operation"
+    ]
+   },
+   {
+    "title": "Linear Motion",
+    "items": [
+     "Fine linear travel arrangement, movement range approx. 10–0–10 mm"
+    ]
+   },
+   {
+    "title": "Micrometer Assembly",
+    "items": [
+     "Precision micrometer with vernier dial of ~100 divisions",
+     "Least count up to 0.01 mm"
+    ]
+   },
+   {
+    "title": "Eyepiece",
+    "items": [
+     "Ramsden type eyepiece",
+     "Magnification: ~10×"
+    ]
+   },
+   {
+    "title": "Objective Lens",
+    "items": [
+     "Magnification: ~3×"
+    ]
+   },
+   {
+    "title": "Optical Plates",
+    "items": [
+     "Precision optical glass plates",
+     "Surface flatness in range λ/8 to λ/10 for enhanced fringe visibility and accuracy"
+    ]
+   },
+   {
+    "title": "Spherometer",
+    "items": [
+     "Three-leg type brass spherometer with vertical scale and micrometer arrangement",
+     "Lower disc diameter: ~55–65 mm",
+     "Micrometer diameter: ~35–45 mm",
+     "Travel range: approx. 10–0–10 mm",
+     "Least count up to 0.01 mm"
+    ]
+   },
+   {
+    "title": "Plano Convex Lens",
+    "items": [
+     "Diameter: ~60–65 mm",
+     "Focal length: ~180–220 mm"
+    ]
+   },
+   {
+    "title": "Sodium Source",
+    "items": [
+     "Mild steel housing, dimensions ~180–220 × 80–90 mm (L × Ø)",
+     "Slit aperture: ~18–22 × 14–18 mm"
+    ]
+   },
+   {
+    "title": "Sodium Lamp",
+    "items": [
+     "Pin-type socket sodium bulb, ~35 W rating"
+    ]
+   },
+   {
+    "title": "Electrical Protection",
+    "items": [
+     "Built-in fuse protection, ~2 A rating"
+    ]
+   },
+   {
+    "title": "Compact Configuration",
+    "items": [
+     "All essential optical, illumination, and measuring components integrated into a single self-contained unit",
+     "Designed for ease of operation and reduced laboratory space requirement"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 4,
+  "code": "PhyUGEx-44",
+  "title": "Verification of Superposition theorem(Network Theorems Trainer Kit)",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "Laboratory training system with inbuilt regulated power supply",
+     "Designed to study and verify fundamental electrical network theorems",
+     "Supports hands-on experimentation, measurement, and analysis of circuit behavior under various configurations"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "Mains input: 90–270 V ±10%, 50 Hz",
+     "DC regulated outputs: +5 V and +12 V",
+     "Constant current source: 3.2 mA"
+    ]
+   },
+   {
+    "title": "Measurement Instruments",
+    "items": [
+     "Voltmeter range: 200 mV to 20 V",
+     "Ammeter range: 200 μA to 200 mA"
+    ]
+   },
+   {
+    "title": "Network Theorems",
+    "items": [
+     "Thevenin’s theorem",
+     "Norton’s theorem",
+     "Superposition theorem",
+     "Maximum Power Transfer theorem",
+     "Reciprocity theorem",
+     "Tellegen’s theorem"
+    ]
+   },
+   {
+    "title": "Experimentation Support",
+    "items": [
+     "Configurable circuits for theorem validation",
+     "Integrated measurement for voltage and current analysis",
+     "Safe and reliable connections for repeated laboratory use",
+     "Note: (ALSO, FOR PhyUGEx-45 PhyUGEx-46 PhyUGEx-182PhyUGEx-217)"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 5,
+  "code": "PhyUGEx-48",
+  "title": "Refractive index of glass-Brewster's law",
+  "groups": [
+   {
+    "title": "Optical Bench",
+    "items": [
+     "Length: approx. 300 mm (triangular type)",
+     "Stable design with provision for mounting optical accessories"
+    ]
+   },
+   {
+    "title": "Polarizer",
+    "items": [
+     "Angular range: 0° ± 90°",
+     "Least count: ~1°",
+     "Aperture: ~21 mm",
+     "Frame size: ~130 mm",
+     "Mounting rod: ~10 mm diameter"
+    ]
+   },
+   {
+    "title": "Diode Laser",
+    "items": [
+     "Wavelength: red ~650 nm",
+     "Stable output suitable for polarization experiments"
+    ]
+   },
+   {
+    "title": "Detector & Measurement Unit",
+    "items": [
+     "Detector: pinhole with silicon photo detector",
+     "Output measurement unit: current range ~0–199 mA/mA"
+    ]
+   },
+   {
+    "title": "Goniometer",
+    "items": [
+     "Least count: ~20 seconds",
+     "Main scale: brass, diameter ~175 mm",
+     "Angular range: 0–360°",
+     "One main scale division (MSD): ~1/3°"
+    ]
+   },
+   {
+    "title": "Optical Components",
+    "items": [
+     "Objective lens: achromatic, focal length ~178 mm, diameter ~32 mm",
+     "Slit: German silver with knurled screw",
+     "Reticle: 90° cross etched on glass, diameter ~21 mm",
+     "Eyepiece: Ramsden type, ~15× magnification",
+     "Vernier: brass, 4 verniers, dimensions ~60 × 48 mm",
+     "Top vernier graduated",
+     "Bottom vernier graduated at 60°"
+    ]
+   },
+   {
+    "title": "Base",
+    "items": [
+     "Diameter: ~220 mm",
+     "Material: aluminum casting for stability"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 6,
+  "code": "PhyUGEx-61",
+  "title": "Series LCR circuit-determination of resonant frequency, bandwith, Q factor",
+  "groups": [
+   {
+    "title": "General Features",
+    "items": [
+     "LCD voltmeter and frequency counter included",
+     "Inbuilt signal generator",
+     "Training board demonstrating both Series and Parallel RLC resonance on the same platform",
+     "Inbuilt power supply",
+     "Low-cost design suitable for laboratory use"
+    ]
+   },
+   {
+    "title": "Experimental Capabilities",
+    "items": [
+     "Study of Series RLC resonance and determination of resonance frequency",
+     "Study of Parallel RLC resonance and determination of resonance frequency",
+     "Determination of resonant frequency, bandwidth, and Q factor in Series LCR circuit"
+    ]
+   },
+   {
+    "title": "Mains Supply",
+    "items": [
+     "Operates from 90–275 V AC, 50/60 Hz"
+    ]
+   },
+   {
+    "title": "Generator Output",
+    "items": [
+     "Signal generator output: 8 Vpp"
+    ]
+   },
+   {
+    "title": "Frequency Ranges",
+    "items": [
+     "Selectable ranges: 1 kHz, 10 kHz, 60 kHz"
+    ]
+   },
+   {
+    "title": "Voltmeter",
+    "items": [
+     "Onboard voltmeter measurement range: 2 V"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 7,
+  "code": "PhyUGEx-74",
+  "title": "To find the value of e/m of an electron by Thomson's method using bar magnets",
+  "groups": [
+   {
+    "title": "Power Supply",
+    "items": [
+     "HT and LT power supply with digital meter",
+     "Focus and intensity control",
+     "X-shift for beam adjustment",
+     "Variable deflection potential knob"
+    ]
+   },
+   {
+    "title": "CRT Tube Arrangement",
+    "items": [
+     "Mounted on acrylic stand",
+     "Slidable on wing bridge stand"
+    ]
+   },
+   {
+    "title": "Wing Bridge Stand",
+    "items": [
+     "Graduation up to 15 cm on either side"
+    ]
+   },
+   {
+    "title": "Compass",
+    "items": [
+     "Diameter: 4 inches",
+     "With mirror"
+    ]
+   },
+   {
+    "title": "Bar Magnets",
+    "items": [
+     "Pair of 50 mm AlNiCo magnets"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 8,
+  "code": "PhyUGEx-80",
+  "title": "Measurement of wavelength of sodium D line/Wavelength separation of sodium D doublet lines using Michelson interferometer.",
+  "groups": [
+   {
+    "title": "Translation & Adjustment System",
+    "items": [
+     "Moveable mirror travel range: approx. ±8–12 mm (nominal 10–0–10 mm)",
+     "Coarse adjustment knob resolution: ~0.01 mm (10 µm)",
+     "Micrometer fine adjustment resolution: ~0.0001 mm (0.1 µm)"
+    ]
+   },
+   {
+    "title": "Beam Splitter",
+    "items": [
+     "Shape: rectangular plate",
+     "Dimensions: ~50 × 39 × 7 mm",
+     "Split ratio (R/T): ~50/50",
+     "Optical flatness: λ/8 (at ~632 nm)"
+    ]
+   },
+   {
+    "title": "Compensator Plate",
+    "items": [
+     "Shape: rectangular plate",
+     "Dimensions: ~50 × 39 × 7 mm",
+     "Optical flatness: λ/8 (at ~632 nm)"
+    ]
+   },
+   {
+    "title": "Mirrors",
+    "items": [
+     "Type: circular mirrors (2 nos.)",
+     "Dimensions: ~30 mm diameter × ~10 mm thickness"
+    ]
+   },
+   {
+    "title": "Telescope Assembly",
+    "items": [
+     "Tube size: ~90 × 25 mm (L × Ø)",
+     "Eyepiece magnification: ~10×"
+    ]
+   },
+   {
+    "title": "Beam Expander",
+    "items": [
+     "Type: microscope objective, ~10×"
+    ]
+   },
+   {
+    "title": "Lab Jack",
+    "items": [
+     "Platform size: ~300 × 200 to 340 × 240 mm",
+     "Height adjustment: variable (laboratory standard range)"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 9,
+  "code": "PhyUGEx-98",
+  "title": "Hall effect in semiconductor: determination of mobility, hall coefficient",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "A laboratory training setup designed to study the Hall effect in semiconductors, enabling determination of mobility and Hall coefficient. The setup is suitable for classroom and laboratory use, with durable construction and clear labeling."
+    ]
+   },
+   {
+    "title": "General Requirements",
+    "items": [
+     "Hall probes, Gauss and Tesla meter, measuring unit, temperature sensor, constant current source, and electromagnet",
+     "P-type germanium crystal with oven",
+     "In As sensor for magnetic field measurement",
+     "Constant current source with LCD display"
+    ]
+   },
+   {
+    "title": "Gauss and Tesla Meter",
+    "items": [
+     "Microcontroller-based LCD display for Gauss and Tesla measurements",
+     "Measurement range: 0–20 kG",
+     "Sensor: In As type, high sensitivity",
+     "Direction indication of magnetic field",
+     "PC interface: RS232 or USB",
+     "Mains supply: 230 V AC ±10%, 50 Hz"
+    ]
+   },
+   {
+    "title": "Measurement Unit",
+    "items": [
+     "Probe current: Max 18–20 mA",
+     "Heater current: Adjustable 0–700 mA",
+     "Operating temperature: 0–100 °C",
+     "Hall voltage: Max 200 mV",
+     "PC interface: RS232 and USB",
+     "Mains supply: 230 V AC ±10%, 50 Hz"
+    ]
+   },
+   {
+    "title": "Hall Probe",
+    "items": [
+     "Crystal: P-type lightly doped",
+     "Resistivity: As per probe specification",
+     "Thickness: As per probe specification"
+    ]
+   },
+   {
+    "title": "Temperature Sensor",
+    "items": [
+     "Type: PT 100"
+    ]
+   },
+   {
+    "title": "Constant Current Power Supply",
+    "items": [
+     "Current range: 0–3.5 A",
+     "Output voltage: 18–20 V",
+     "Display: LCD, 16 × 2 characters",
+     "Mains supply: 230 V AC ±10%, 50 Hz"
+    ]
+   },
+   {
+    "title": "Electromagnet",
+    "items": [
+     "Pole diameter: 20–25 mm",
+     "Coils: 2 nos.",
+     "Resistance: ~5 Ω",
+     "Input current: 3.5 A at 20 V",
+     "Weight: ~16 kg"
+    ]
+   },
+   {
+    "title": "Functional Capabilities",
+    "items": [
+     "Measurement of magnetic field using Gauss and Tesla meter",
+     "Determination of electromagnet poles with Hall probe and Gauss meter",
+     "Measurement of Hall voltage",
+     "Calculation of charge carrier concentration density of semiconductor crystal",
+     "Calculation of Hall coefficient of Ge p-type crystal",
+     "Calculation of mobility of charge carrier particles",
+     "Study of Hall voltage vs current at constant magnetic field",
+     "Study of Hall coefficient vs temperature",
+     "Study of Hall voltage vs magnetic field at constant current"
+    ]
+   },
+   {
+    "title": "Additional Requirements",
+    "items": [
+     "Compact, durable enclosure with safety features",
+     "Clear labeling of all terminals and controls",
+     "Supplied with instruction manual including circuit diagrams and experiment procedures",
+     "Suitable for repeated laboratory use"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 10,
+  "code": "PhyUGEx-101",
+  "title": "Fermi energy of copper",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "Laboratory kit designed to study the Fermi energy of copper",
+     "Includes constant current source, digital measurement instruments, copper coil with glass enclosure, and supporting equipment"
+    ]
+   },
+   {
+    "title": "Fermi Energy Kit",
+    "items": [
+     "Constant current source",
+     "Digital milli-ammeter: 0–20 mA",
+     "Digital milli-voltmeter: 0–200 mV",
+     "Copper coil with glass enclosure"
+    ]
+   },
+   {
+    "title": "Digital Thermostat",
+    "items": [
+     "Battery-operated probe type digital thermometer",
+     "Auto OFF function",
+     "Maximum temperature: up to 300 °C"
+    ]
+   },
+   {
+    "title": "Electric Kettle",
+    "items": [
+     "Capacity: 1 L",
+     "Power: 1000 W"
+    ]
+   },
+   {
+    "title": "Test Tube Stand",
+    "items": [
+     "Heavy base stand for sample"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 11,
+  "code": "PhyUGEx-105",
+  "title": "Determination of dielectric constant of polar liquid",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "A laboratory training setup designed to determine the dielectric constant of polar liquids and solids using capacitance measurement arrangements."
+    ]
+   },
+   {
+    "title": "Technical Specifications",
+    "items": [
+     "Digital Capacitance Meter",
+     "Measures capacitance from 1 pF up to 1000 pF",
+     "Range: 1 pF",
+     "Records previously measured value",
+     "Mains operated",
+     "Metal cabinet"
+    ]
+   },
+   {
+    "title": "Dielectric Constant of Solids Arrangement",
+    "items": [
+     "Parallel plate arrangement with variable gap"
+    ]
+   },
+   {
+    "title": "Dielectric Constant of Liquids Arrangement",
+    "items": [
+     "Concentric cylinders arrangement",
+     "Free space for liquid filling between cylinders",
+     "Graduations on cylinder"
+    ]
+   },
+   {
+    "title": "Samples",
+    "items": [
+     "3 solid samples",
+     "1 liquid sample"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 12,
+  "code": "PhyUGEx-107",
+  "title": "B-H curve using CRO",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "A laboratory training setup designed to study the B-H curve of ferromagnetic materials with integrated software and data acquisition/processing system."
+    ]
+   },
+   {
+    "title": "General Features",
+    "items": [
+     "Auto identification of voltage and current sensors",
+     "Live data transfer and graph plotting",
+     "Programmable delay in data acquisition",
+     "Data analysing software",
+     "Automatic mode of demagnetization",
+     "Automatic determination of relative permeability of ferromagnetic material"
+    ]
+   },
+   {
+    "title": "Technical Data",
+    "items": [
+     "Data Logger: 4 input channels, 6 PIN"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 13,
+  "code": "PhyUGEx-161",
+  "title": "Surface tension by Quincke's method",
+  "groups": [
+   {
+    "title": "Experiment Setup",
+    "items": [
+     "Digital Travelling Microscope",
+     "Single axis (vertical) travel with digital micrometer",
+     "Least count: 0.01 mm"
+    ]
+   },
+   {
+    "title": "Electromagnet",
+    "items": [
+     "Flat poles with adjustable pole gaps",
+     "Maximum magnetic field: 6 k Gauss"
+    ]
+   },
+   {
+    "title": "Constant Current Power Supply",
+    "items": [
+     "Digital current meter",
+     "Output: 32 V / 4 A"
+    ]
+   },
+   {
+    "title": "U-Tube and Stand",
+    "items": [
+     "One end of 2 mm bore",
+     "Acrylic stand"
+    ]
+   },
+   {
+    "title": "Samples",
+    "items": [
+     "Ferrous Sulphate",
+     "Nickel Ammonium Sulphate"
+    ]
+   },
+   {
+    "title": "Gauss Meter and Probe",
+    "items": [
+     "Auto-ranging",
+     "Measurement capability up to 20 k Gauss"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 14,
+  "code": "PhyUGEx-201",
+  "title": "Thermal conductivity of good conductor by Angstrom’s method",
+  "groups": [
+   {
+    "title": "Copper Rod Arrangement",
+    "items": [
+     "Diameter: 12.5 mm",
+     "Length: 400 mm",
+     "Heating probe fixed on one side",
+     "Temperature sensors located at equally spaced points (distance: 80 mm each)"
+    ]
+   },
+   {
+    "title": "4-Channel Thermometer",
+    "items": [
+     "Provision to fix 4 thermo-couples",
+     "Includes power supply unit"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 15,
+  "code": "PhyUGEx-214",
+  "title": "Verification of Faradays law",
+  "groups": [
+   {
+    "title": "Features",
+    "items": [
+     "High-speed data logger with sampling up to ~100 k samples/s",
+     "Coil sets with different turns and wire gauges for comparative analysis",
+     "Software support for data acquisition and analysis",
+     "Multifunction digital timer with navigation keys for time, velocity, acceleration, masking, and counter modes"
+    ]
+   },
+   {
+    "title": "Data Logger",
+    "items": [
+     "Sampling rate: up to ~100 kS/s",
+     "Memory capacity: ~800 k samples",
+     "Built-in sensor support: ~6 channels",
+     "External sensor ports: ~4, compatible with multiple sensor types",
+     "Connectivity: micro USB interface",
+     "Dimensions: ~85–95 mm × 85–95 mm × 18–25 mm",
+     "Weight: ~100–150 g"
+    ]
+   },
+   {
+    "title": "Voltage Sensor",
+    "items": [
+     "Measurement range: ~±2.5 V AC/DC",
+     "Accuracy: ~±3%",
+     "Resolution: ~1–2 mV",
+     "Input resistance: >1 MΩ"
+    ]
+   },
+   {
+    "title": "Digital Timer",
+    "items": [
+     "Dual-line LCD display",
+     "Time resolution: ~0.1 ms",
+     "Operating modes: time, speed, acceleration measurement",
+     "USB interface support",
+     "Operating voltage: ~5 V DC"
+    ]
+   },
+   {
+    "title": "Photogate",
+    "items": [
+     "Infrared detector-based arrangement",
+     "RJ11 connector interface"
+    ]
+   },
+   {
+    "title": "Coil Set",
+    "items": [
+     "Wire gauges: SWG 26–30",
+     "Coil lengths: ~75–100 mm",
+     "Number of turns: ~700–1150",
+     "Resistance: ~10–20 Ω",
+     "Inductance: ~8–15 mH",
+     "Maximum current capacity: ~0.3–0.7 A"
+    ]
+   },
+   {
+    "title": "Magnet",
+    "items": [
+     "Cylindrical Alnico magnet",
+     "Dimensions: ~45–55 mm length × 8–12 mm diameter"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 16,
+  "code": "PhyUGEx-242",
+  "title": "Full Adder and Full Subtractor",
+  "groups": [
+   {
+    "title": "Laboratory-grade instrument designed for educational use",
+    "items": [
+     "Self-contained system for a wide range of logic and digital circuit experiments",
+     "Easy to operate, suitable for structured learning with guided experiments",
+     "Includes solderless breadboard for circuit implementation",
+     "Onboard regulated DC power supply and pulse/clock generator",
+     "Digital circuitries displayed virtually, interfaced with actual inputs and outputs",
+     "Graphical LCD (128 × 64 dots) for experiment menus and gate-level diagrams"
+    ]
+   },
+   {
+    "title": "Built-in Functional Features",
+    "items": [
+     "Onboard DC supply: +4–5 V, 400–500 mA",
+     "Multiple clock frequencies: 1 Hz, 100 Hz, 1 kHz, 100 kHz",
+     "TTL-compatible logic levels up to 3.3 V amplitude",
+     "2 or more pulse (push) switches for manual triggering",
+     "Up to 8 toggle-type data input switches for TTL logic input selection",
+     "Up to 8 LED indicators for logic state display",
+     "2–3 seven-segment displays for numerical output and digital display experiments"
+    ]
+   },
+   {
+    "title": "Hardware Specifications",
+    "items": [
+     "Breadboard working area: ~172.5 mm × 68 mm",
+     "Operates on universal AC input: 100–240 V, 50 Hz",
+     "Safe and reliable operation under laboratory conditions"
+    ]
+   },
+   {
+    "title": "Environmental Conditions",
+    "items": [
+     "Operating temperature: 0 °C to 40 °C",
+     "Relative humidity: up to 85%"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 17,
+  "code": "PhyUGEx-250",
+  "title": "Study of Seeback effect/A complete \"Seebeck and Peltier Effect Demonstrator\" apparatus",
+  "groups": [
+   {
+    "title": "Peltier & Seebeck Effect Kit",
+    "items": [
+     "Digital voltmeter",
+     "Digital ammeter",
+     "Regulated power supply with voltage variable up to 12 V",
+     "Digital dual-channel temperature indicator"
+    ]
+   },
+   {
+    "title": "Peltier Module",
+    "items": [
+     "Sandwiched between two heat sinks of same mass and dimensions",
+     "Insulated with thermal wool",
+     "Holes provided for thermometers"
+    ]
+   },
+   {
+    "title": "Thermocouples",
+    "items": [
+     "Digital temperature probes (2 nos.)"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 18,
+  "code": "PhyUGEx-256",
+  "title": "Ionization potential (Frank-Hertz Experiment)/Ionization potential (Frank-Hertz) Experiment Apparatus",
+  "groups": [
+   {
+    "title": "Franck-Hertz Unit",
+    "items": [
+     "Modes: Manual or Data Logging",
+     "Voltage: 1.2–12 V",
+     "Display: 3½ digit LED screen",
+     "Grid (G) Voltage: 0–80 V",
+     "Control Grid (G) Voltage: 0–10 V",
+     "Filament Voltage: 0–9 V",
+     "4 mm safety socket connections"
+    ]
+   },
+   {
+    "title": "Neon Tube",
+    "items": [
+     "Dimensions: 130 × 26 mm",
+     "Filament Voltage: 6–9 V",
+     "Control Voltage: 9 V",
+     "Accelerating Voltage: Max. 80 V",
+     "Counter Voltage: 1.2–10 V",
+     "4 mm safety socket and plug"
+    ]
+   },
+   {
+    "title": "Data Logger",
+    "items": [
+     "Input Channels: 4",
+     "Connector: 6 PIN BT",
+     "Resolution: 12-bit ADC @ 100 ksps",
+     "Analog Input: 0–5 V",
+     "Output Channels: 12-bit DAC",
+     "Analog Output: ±12 V, max 10 mA",
+     "Current Booster: 1 A",
+     "Power Connector: 3 PIN DIN",
+     "USB cable included"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "Input: 220 V, 50 Hz AC",
+     "Output: ±12 V",
+     "Connector: 3 PIN DIN"
+    ]
+   },
+   {
+    "title": "Sensors",
+    "items": [
+     "Voltage Sensor: ±10 V, 4 mm socket, 6 PIN BT connector",
+     "Current Sensor: ±100 nA, 4 mm socket, 6 PIN BT connector"
+    ]
+   },
+   {
+    "title": "Features",
+    "items": [
+     "Automatic and manual operation modes",
+     "Ignition layers visible through tube window",
+     "Auto ID voltage and current sensors",
+     "Free graph analyzer software",
+     "Individual 7-segment displays for filament, control, grid, and accelerating voltages",
+     "Traco power supply for data logger and sensors"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 19,
+  "code": "PhyUGEx-262",
+  "title": "Study of Lissajous’ Figures",
+  "groups": [
+   {
+    "title": "General Requirements",
+    "items": [
+     "Operates on 230 V AC ±10%, 50 Hz mains supply",
+     "Inbuilt DC supply: +12 V / +15 V, rated 500 mA / 1 A",
+     "Onboard signal generator: up to 100 kHz, amplitude range 0–5 Vpp"
+    ]
+   },
+   {
+    "title": "Functional Capabilities",
+    "items": [
+     "Study of Lissajous figures",
+     "Calculation of unknown frequency using Lissajous figures",
+     "RLC resonance frequency calculation using Lissajous figures",
+     "Phase difference calculation using Lissajous figures"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 20,
+  "code": "PhyUGEx-268",
+  "title": "Operational Amplifier as Voltage follower, Adder and Subtractor circuits.",
+  "groups": [
+   {
+    "title": "General Requirements",
+    "items": [
+     "Trainer capable of studying operational amplifier configurations: integrator, differentiator, non-inverting, inverting, buffer, comparator, adder, and subtractor",
+     "Inbuilt regulated power supply, breadboard, and function generator",
+     "Designed for laboratory use in educational institutions with durable construction and clear labeling"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "Fixed DC: +12 V regulated, -12 V regulated, +5 V regulated, -5 V regulated",
+     "Variable DC: +1.5 V to +10 V regulated (LM317 or equivalent), -1.5 V to -10 V regulated (LM337 or equivalent)",
+     "Equipped with overload and short-circuit protection"
+    ]
+   },
+   {
+    "title": "Function Generator",
+    "items": [
+     "Waveforms: Sine, Square, Triangular",
+     "Frequency range: 1 kHz to 100 kHz",
+     "Output amplitude: 0–5 Vpp adjustable"
+    ]
+   },
+   {
+    "title": "Operational Amplifier Section",
+    "items": [
+     "Op-Amp IC: uA741 (2 Nos.) or equivalent",
+     "All pins terminated with 2 mm banana sockets"
+    ]
+   },
+   {
+    "title": "Passive Component Bank",
+    "items": [
+     "Resistors: 1 kΩ, 10 kΩ, 100 kΩ (each 5 Nos.), 1% tolerance, ¼ W",
+     "Capacitors: Electrolytic 1 µF / 63 V; Disc capacitors 1 nF / 63 V, 10 nF / 63 V, 100 nF / 63 V",
+     "Diode: 1N4007 or equivalent"
+    ]
+   },
+   {
+    "title": "Variable Resistance Bank",
+    "items": [
+     "Op-Amp as Integrator",
+     "Op-Amp as Differentiator",
+     "Non-Inverting Amplifier",
+     "Inverting Amplifier",
+     "Buffer (Voltage Follower)",
+     "Comparator",
+     "Adder (Summing Amplifier)",
+     "Subtractor (Differential Amplifier)"
+    ]
+   },
+   {
+    "title": "Additional Requirements",
+    "items": [
+     "Compact, durable enclosure with safety features",
+     "Clearly labeled terminals and controls",
+     "Instruction manual with circuit diagrams and experiment procedures",
+     "Suitable for repeated laboratory use",
+     "Inclusive of classroom and laboratory modules covering:",
+     "Electronic components",
+     "Series and parallel circuits",
+     "Voltage divider and current divider",
+     "Circuit analysis"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 21,
+  "code": "PhyUGEq-1",
+  "title": "DC Regulated Linear Dual Power Supply (Channel A: 0-30V, Channel B: 0-30V, 0-3 2) - (HTC DC-3002-11)",
+  "groups": [
+   {
+    "title": "General Description",
+    "items": [
+     "Laboratory-grade regulated DC power supply for precise voltage and current control",
+     "Supports constant voltage and constant current modes",
+     "Numeric keypad input for fine adjustments",
+     "LCD display for real-time monitoring"
+    ]
+   },
+   {
+    "title": "DC Output",
+    "items": [
+     "Voltage range: 0–30 V DC",
+     "Current range: 0–3 A DC"
+    ]
+   },
+   {
+    "title": "Control Interface",
+    "items": [
+     "Numeric keypad for precise adjustment of voltage and current",
+     "Step increments supported for voltage adjustments"
+    ]
+   },
+   {
+    "title": "Display",
+    "items": [
+     "LCD display showing real-time voltage, current, and power readings"
+    ]
+   },
+   {
+    "title": "Indicators",
+    "items": [
+     "LED indicator for current limit exceed alert"
+    ]
+   },
+   {
+    "title": "Operating Modes",
+    "items": [
+     "Constant voltage source mode",
+     "Constant current source mode"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 22,
+  "code": "PhyPGEx-17",
+  "title": "Franck-Hertz Experiment",
+  "groups": [
+   {
+    "title": "Franck–Hertz Unit",
+    "items": [
+     "Data logging system",
+     "Voltage: 1.2–12 V",
+     "Display: 3½ digit LED screen",
+     "Grid (G) voltage: 0–80 V",
+     "Control grid (G) voltage: 0–10 V",
+     "Filament voltage: 0–9 V",
+     "4 mm safety socket"
+    ]
+   },
+   {
+    "title": "Neon Tube",
+    "items": [
+     "Diameter: 130 × 26 mm",
+     "Filament voltage: 6–9 V",
+     "Control voltage: 9 V",
+     "Accelerating voltage: max. 80 V",
+     "Counter voltage: 1.2–10 V",
+     "4 mm safety socket and plug"
+    ]
+   },
+   {
+    "title": "Data Logger",
+    "items": [
+     "Input channels: 4",
+     "Connector: 6 PIN BT",
+     "Resolution: 12-bit ADC @ 100 ksps",
+     "Analog input: 0–5 V",
+     "Output channels: 12-bit DAC",
+     "Analog output: ±12 V, max. 10 mA",
+     "Current booster: 1 A",
+     "Power connector: 3 PIN DIN",
+     "USB cable"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "Input: 220 V, 50 Hz AC",
+     "Output: ±12 V",
+     "Connector: 3 PIN DIN"
+    ]
+   },
+   {
+    "title": "Sensors",
+    "items": [
+     "Voltage sensor: ±10 V, 4 mm socket, 6 PIN BT connector",
+     "Current sensor: ±100 nA, 4 mm socket, 6 PIN BT connector"
+    ]
+   },
+   {
+    "title": "Features",
+    "items": [
+     "Automatic and manual modes of operation",
+     "Ignition layers visible on tube window",
+     "Voltage and current sensors with auto ID",
+     "Free graph analyzer software",
+     "Individual 7-segment display for filament voltage, control voltage, grid voltage, and accelerating voltage",
+     "Traco power supply for data logger and sensor"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 23,
+  "code": "PhyPGEx-18",
+  "title": "Verification of Brewster's law of polarization",
+  "groups": [
+   {
+    "title": "Optical Bench",
+    "items": [
+     "Length: approx. 300 mm (triangular type)",
+     "Stable design with provision for mounting optical accessories"
+    ]
+   },
+   {
+    "title": "Polarizer",
+    "items": [
+     "Angular range: 0° ± 90°",
+     "Least count: ~1°",
+     "Aperture: ~21 mm",
+     "Frame size: ~130 mm",
+     "Mounting rod: ~10 mm diameter"
+    ]
+   },
+   {
+    "title": "Diode Laser",
+    "items": [
+     "Wavelength: red ~650 nm",
+     "Stable output suitable for polarization experiments"
+    ]
+   },
+   {
+    "title": "Detector & Measurement Unit",
+    "items": [
+     "Detector: pinhole with silicon photo detector",
+     "Output measurement unit: current range ~0–199 mA/mA"
+    ]
+   },
+   {
+    "title": "Goniometer",
+    "items": [
+     "Least count: ~20 seconds",
+     "Main scale: brass, diameter ~175 mm",
+     "Angular range: 0–360°",
+     "One main scale division (MSD): ~1/3°"
+    ]
+   },
+   {
+    "title": "Optical Components",
+    "items": [
+     "Objective lens: achromatic, focal length ~178 mm, diameter ~32 mm",
+     "Slit: German silver with knurled screw",
+     "Reticle: 90° cross etched on glass, diameter ~21 mm",
+     "Eyepiece: Ramsden type, ~15× magnification",
+     "Vernier: brass, 4 verniers, dimensions ~60 × 48 mm",
+     "Top vernier graduated",
+     "Bottom vernier graduated at 60°"
+    ]
+   },
+   {
+    "title": "Base",
+    "items": [
+     "Diameter: ~220 mm",
+     "Material: aluminum casting for stability"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 24,
+  "code": "PhyPGEx-20",
+  "title": "RI of thin sheet of Glass using Michaelson Interferometer",
+  "groups": [
+   {
+    "title": "General Requirements",
+    "items": [
+     "Apparatus designed for measurement of wavelength of sodium D line and wavelength separation of sodium D doublet lines using Michelson interferometer"
+    ]
+   },
+   {
+    "title": "Translation & Adjustment System",
+    "items": [
+     "Movable mirror travel range: approx. ±8–12 mm (nominal 10–0–10 mm)",
+     "Coarse adjustment knob resolution: ~0.01 mm (10 µm)",
+     "Micrometer fine adjustment resolution: ~0.0001 mm (0.1 µm)"
+    ]
+   },
+   {
+    "title": "Beam Splitter",
+    "items": [
+     "Shape: rectangular plate",
+     "Dimensions: ~50 × 39 × 7 mm",
+     "Split ratio (R/T): ~50/50",
+     "Optical flatness: λ/8 (at ~632 nm)"
+    ]
+   },
+   {
+    "title": "Compensator Plate",
+    "items": [
+     "Shape: rectangular plate",
+     "Dimensions: ~50 × 39 × 7 mm",
+     "Optical flatness: λ/8 (at ~632 nm)"
+    ]
+   },
+   {
+    "title": "Mirrors",
+    "items": [
+     "Type: circular mirrors (2 nos.)",
+     "Dimensions: ~30 mm diameter × ~10 mm thickness"
+    ]
+   },
+   {
+    "title": "Telescope Assembly",
+    "items": [
+     "Tube size: ~90 × 25 mm (L × Ø)",
+     "Eyepiece magnification: ~10×"
+    ]
+   },
+   {
+    "title": "Beam Expander",
+    "items": [
+     "Type: microscope objective, ~10×"
+    ]
+   },
+   {
+    "title": "Lab Jack",
+    "items": [
+     "Platform size: ~300 × 200 to 340 × 240 mm",
+     "Height adjustment: variable (laboratory standard range)"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 25,
+  "code": "PhyPGEx-32",
+  "title": "Velocity of ultrasonic waves in liquids using ultrasonic interferometer",
+  "groups": [
+   {
+    "title": "General Requirements",
+    "items": [
+     "Setup with ultrasonic transducers functioning as distance meter and object detector"
+    ]
+   },
+   {
+    "title": "Ultrasonic interferometer",
+    "items": [
+     "Quartz crystal: 12/14 mm diameter, 1.2–1.4 mm thickness, 1.5–2 MHz frequency"
+    ]
+   },
+   {
+    "title": "Liquid cell with",
+    "items": [
+     "Optimum liquid quantity: 12 cm³",
+     "Reflector maximum displacement: 20–25 mm",
+     "Micrometer least count: 0.01 mm"
+    ]
+   },
+   {
+    "title": "Distance Measurement Unit",
+    "items": [
+     "Ultrasonic transducer range: 28 cm to 1.0 m (approx.)",
+     "Clock generator: 35–40 kHz",
+     "Signal strength: 58–60 dB",
+     "Threshold detector: 0–9 V DC",
+     "Buzzer indicator: 1–15 V DC",
+     "Mains supply: 230 V AC ±10%, 50 Hz",
+     "Fuse: 500 mA",
+     "LCD display"
+    ]
+   },
+   {
+    "title": "Experimental Capabilities",
+    "items": [
+     "Study of ultrasound characteristics",
+     "Measurement of distance using ultrasonic sensors",
+     "Object detection using ultrasonic sensors",
+     "Determination of velocity of ultrasonic waves in non-electrolytic liquid using ultrasonic interferometer",
+     "Determination of compressibility of non-electrolytic liquid"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 26,
+  "code": "PhyPGEx-61",
+  "title": "Experimental setup for Determination of Curie temp for a ferromagnetic material (Ni-Fe alloy).",
+  "groups": [
+   {
+    "title": "Components",
+    "items": [
+     "Ferro-magnetic Curie Temperature Kit: AC power supply with variable voltage, ferrite core coil with primary and secondary winding",
+     "Digital Thermostat: Battery-operated probe-type digital thermometer with auto OFF function, maximum up to 300 °C",
+     "Electric Kettle: 1 L capacity, 1000 W",
+     "Test Tube Stand: Heavy base stand for sample",
+     "Connecting Wires: Patch cords with 2 mm pins to BNC"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 27,
+  "code": "PhyPGEx-62",
+  "title": "Experimental setup for Study of B-H curve of a Ferromagnetic material (both hard and soft).",
+  "groups": [
+   {
+    "title": "B–H Curve System",
+    "items": [
+     "B–H curve with software and data acquisition/processing system"
+    ]
+   },
+   {
+    "title": "Data Acquisition System",
+    "items": [
+     "Data logger with built-in current booster",
+     "Four analog input channels",
+     "Input resolution: 12-bit ADC",
+     "Sampling rate: up to 100 ksps",
+     "Analog input range: 0–5 V",
+     "Output channels: 12-bit DAC",
+     "Analog output: ±12 V, max. 10 mA",
+     "Current booster capacity: up to 1 A",
+     "Communication interface: USB",
+     "Sensor interface: 6-pin BT connector",
+     "Automatic identification of connected sensors"
+    ]
+   },
+   {
+    "title": "Software",
+    "items": [
+     "B–H curve software",
+     "Real-time data acquisition and graph plotting",
+     "Graphical analysis tools",
+     "Programmable data acquisition delay",
+     "Automatic calculation of relative permeability",
+     "Automatic and manual demagnetization modes",
+     "Data storage and export facility"
+    ]
+   },
+   {
+    "title": "Sensors",
+    "items": [
+     "Voltage Sensor: Measurement range ±1 V, output via 4 mm safety sockets, interface via 6-pin BT connector",
+     "Current Sensor: Measurement range ±1 A, output via 4 mm safety sockets, interface via 6-pin BT connector"
+    ]
+   },
+   {
+    "title": "Ferromagnetic Core Assembly",
+    "items": [
+     "Laminated U–I type ferromagnetic core (Mild steel & CRNGO)",
+     "U-core dimensions: ~150 × 130 mm (L × H)",
+     "U-core cross section: ~40 × 40 mm",
+     "I-core length: ~150 mm"
+    ]
+   },
+   {
+    "title": "Coil Assembly",
+    "items": [
+     "Coil winding: ~300 turns",
+     "Wire material: enamelled copper wire",
+     "Wire gauge: ~19 SWG (or equivalent)",
+     "Pair of coils supplied for magnetization and measurement"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 28,
+  "code": "PhyPGEx-103",
+  "title": "Study of Zeeman Effect using Fabry-Perot interferometer",
+  "groups": [
+   {
+    "title": "Fabry–Perot Etalon",
+    "items": [
+     "High precision mirror optics, flatness ~λ/20",
+     "Mirror separation: ~2–4 mm",
+     "Interference filter wavelength: 532–546 nm",
+     "Clear aperture: ~35–45 mm diameter",
+     "Mounting rod diameter: ~10 mm"
+    ]
+   },
+   {
+    "title": "CMOS Camera",
+    "items": [
+     "Resolution: ~1–2 MP",
+     "USB interface for computer connectivity and image acquisition"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "Output voltage range: 0–40 V DC",
+     "Output current range: 0–10 A",
+     "Voltage resolution: ~0.1 V",
+     "Current resolution: ~0.1 A",
+     "LED digital display (~3½ digit indication)",
+     "Primary protection: fuse arrangement"
+    ]
+   },
+   {
+    "title": "Optics and Holders",
+    "items": [
+     "Convex lenses: focal lengths 50 cm, 100 cm, 150 cm (each in holder)",
+     "Filter assembly: green filter (546.1 nm)"
+    ]
+   },
+   {
+    "title": "Analyzer/Polarizer and Quarter Wave Plate",
+    "items": [
+     "Optics holder diameter: ~120–140 mm, thickness 2–5 mm, height 220–240 mm"
+    ]
+   },
+   {
+    "title": "Electromagnet",
+    "items": [
+     "Ferromagnetic core type with U-core and I-core assembly",
+     "U-core dimensions: ~140–160 mm × 120–140 mm (L × H)",
+     "Core cross-section: ~35–45 mm square",
+     "I-core length: ~140–160 mm",
+     "Coil rating: ~400–600 turns",
+     "Maximum operating current: 5–10 A",
+     "Connection: 4 mm safety sockets"
+    ]
+   },
+   {
+    "title": "Gauss Meter",
+    "items": [
+     "Range: 2 kG and 20 kG",
+     "Resolution: 1 G at 2 kG, 10 G at 20 kG",
+     "Sensor: InAs Hall probe",
+     "Power: 220 V AC, 50 Hz"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 29,
+  "code": "PhyPGEx-114",
+  "title": "Determination of electron charge 'e' by Millikan's oil drop experiment",
+  "groups": [
+   {
+    "title": "Oil Chamber",
+    "items": [
+     "Chamber with electric field plates, insulated on both sides",
+     "Illumination LED source",
+     "Atomizer",
+     "30× microscope"
+    ]
+   },
+   {
+    "title": "Power Supply",
+    "items": [
+     "0–300 V DC variable output for field plates",
+     "12 V output for illumination"
+    ]
+   },
+   {
+    "title": "Sample Oil",
+    "items": [
+     "Mineral oil or equivalent",
+     "Quantity: 50 ml"
+    ]
+   },
+   {
+    "title": "Digi-Eye Camera with Monitor and Stop Clock",
+    "items": [
+     "Eyepiece camera connected to 32-inch monitor",
+     "Digital stop clock with 0.1 sec resolution"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 32,
+  "code": "EleEq-37",
+  "title": "AmplitudeModulation& Demodulation Trainer Kit",
+  "groups": [
+   {
+    "title": "General System Architecture & Enclosure",
+    "items": [
+     "Complete bench-top educational training platform designed for undergraduate engineering and physics laboratories to study the complete transmission and reception chain of analog communication.",
+     "High-grade, multi-color mimic diagram on the front panel with clearly labeled functional blocks, standard circuit schematics, expected test waveforms, and signal flow paths.",
+     "Front Panel Visual Indicators: Real-time LED status indicators showing active carrier paths, functional block selection, and signal flow direction.",
+     "Built-in Transducers & Audio I/O: Integrated condenser microphone with pre-amplifier, 3.5 mm external microphone/audio input jack, 3.5 mm earphone output jack, and an on-board loudspeaker with volume control for voice communication experiments.",
+     "Enclosure: Compact, durable powder-coated metal / ABS enclosure with integrated internal regulated DC power supplies and mains supply fuse protection."
+    ]
+   },
+   {
+    "title": "Modulation Transmitter Section",
+    "items": [
+     "Audio Modulating Signal Generator: On-board variable audio frequency sine-wave oscillator covering 300 Hz / 400 Hz to at least 3.4 kHz, with independent continuous amplitude and frequency controls.",
+     "RF Carrier Generator: Stable crystal/transistor oscillator generating a 1 MHz sinusoidal carrier signal with low harmonic distortion."
+    ]
+   },
+   {
+    "title": "Modulator Stages",
+    "items": [
+     "Minimum two balanced modulators with output bandpass filtering at 1 MHz for Double Sideband Suppressed Carrier (DSB-SC) and Double Sideband Full Carrier (DSB-FC) generation.",
+     "One balanced modulator with center frequency around 450 kHz to 455 kHz for Single Sideband (SSB) generation.",
+     "Filter Circuits: On-board ceramic bandpass filter centered at 455 kHz (±2 kHz) to achieve precise Single Sideband Suppressed Carrier (SSB-SC) filtering.",
+     "Transmission Antenna: Adjustable multi-section telescopic antenna mounted on the transmitter panel to support low-power wireless radiation of generated AM signals."
+    ]
+   },
+   {
+    "title": "Superheterodyne Receiver",
+    "items": [
+     "Tuned RF Amplifier",
+     "Active RF Mixer",
+     "Local Oscillator (LO)",
+     "Beat Frequency Oscillator (BFO) for SSB signal recovery",
+     "Multi-stage Intermediate Frequency (IF) amplifiers: First IF amplifier stage and Second IF amplifier stage tuned at standard 455 kHz",
+     "Frequency Coverage: RF tuning range covering standard Medium Wave (MW) broadcast frequencies from at least 980 kHz to 2060 kHz.",
+     "Manual Tuning Mechanism: Variable ganged tuning capacitor with a calibrated front-panel frequency dial for station/carrier tuning."
+    ]
+   },
+   {
+    "title": "Demodulation Stages",
+    "items": [
+     "Envelope / Simple Diode Detector for standard DSB-FC envelope recovery.",
+     "Product Detector / Synchronous Detector with BFO carrier re-insertion for SSB-SC signal recovery.",
+     "Automatic Gain Control (AGC): Switchable AGC circuit to demonstrate signal level stabilization and fading prevention.",
+     "Reception Medium: Telescopic antenna mounted directly on the panel along with an external RF input connector for direct coaxial link testing."
+    ]
+   },
+   {
+    "title": "Test Points",
+    "items": [
+     "Transmitter Section: Minimum 20 insulated 2 mm shrouded banana sockets/test points for multi-channel oscilloscope probing across carrier generation, audio amplification, and balanced modulator stages.",
+     "Receiver Section: Minimum 30 insulated 2 mm shrouded banana sockets/test points for stage-by- stage probing (RF out, mixer out, LO out, IF1, IF2, detector out, AGC feedback, and audio pre-amp out).",
+     "Fault Simulation Facility: Built-in hardware fault switches (minimum 8 independent switched faults per module, or ≥ 16 faults total across transmitter and receiver) enabling instructor-led hardware troubleshooting and student fault-diagnosis exercises."
+    ]
+   },
+   {
+    "title": "Electrical & Power Supply Specifications",
+    "items": [
+     "Mains Input Supply: 220–240 V AC ±10%, 50 Hz single phase.",
+     "Internal DC Power: Built-in regulated DC power supplies (±12 V, ±5 V) with short-circuit and thermal overload protection."
+    ]
+   },
+   {
+    "title": "Scope of Supply & Documentation",
+    "items": [
+     "1 × Amplitude Modulation & Demodulation Trainer Unit (integrated or modular dual-board setup).",
+     "1 × Set of color-coded 2 mm patch cords for signal routing and interconnection.",
+     "1 × Telescopic antenna for transmitter and receiver.",
+     "1 × Pair of stereo earphones / headphones with 3.5 mm jack.",
+     "1 × Mains power cable."
+    ]
+   }
+  ]
+ },
+ {
+  "no": 33,
+  "code": "EleEq-47",
+  "title": "OFC Trainer Kit",
+  "groups": [
+   {
+    "title": "General Requirements",
+    "items": [
+     "Comprehensive training system designed for study of analog, digital, and full-duplex optical communication techniques.",
+     "Suitable for academic laboratory use with hands-on experimentation covering modulation, transmission, reception, and measurement.",
+     "Supports full-duplex analog and digital transceiver operation.",
+     "Integrates multiple experimental modules within a single platform.",
+     "Includes on-board function generator, crystal-controlled clock, and built-in DC power supply.",
+     "Clearly marked functional blocks with test points and input-output interfaces for easy experimentation and signal tracing."
+    ]
+   },
+   {
+    "title": "Optical Transmission Capabilities",
+    "items": [
+     "Optical transmission using 660 nm and 950 nm LED-based fiber optic channels.",
+     "Optional compatibility with laser source.",
+     "Supports study of AM, FM, and PWM modulation/demodulation techniques.",
+     "Practical implementation of voice communication over fiber optic link.",
+     "Digital Communication Features",
+     "Supports PC-to-PC communication using RS232 serial interface (9-pin connector).",
+     "Baud rate: 19200.",
+     "Enables digital data transmission experiments with supporting software."
+    ]
+   },
+   {
+    "title": "Functional Modules & Features",
+    "items": [
+     "Optical transmitter and receiver modules: 2 each.",
+     "Analog and digital drivers with selectable modes.",
+     "AC amplifiers: 2 units.",
+     "PLL detector: 1 unit.",
+     "Comparators: 2 units.",
+     "Fourth-order Butterworth filters: 2 units, 3.4 kHz cutoff.",
+     "Built-in voice communication links with microphone and speaker.",
+     "Function generator producing 1 kHz sine and square wave outputs.",
+     "Switched fault simulation system: 4 faults in transmitter and 4 faults in receiver for troubleshooting exercises."
+    ]
+   },
+   {
+    "title": "Optical Fiber",
+    "items": [
+     "Core refractive index: 1.492",
+     "Cladding refractive index: 1.406",
+     "Numerical aperture: > 0.5",
+     "Acceptance angle: > 60°",
+     "Fiber diameter: 1000 µm",
+     "Outer diameter: 2.2 mm",
+     "Cable lengths: 0.5 m and 1 m",
+     "Standard SMA-type connectors",
+     "Approximately 50 test points for signal measurement and analysis.",
+     "Optical power measurement compatibility.",
+     "Numerical aperture measurement jig.",
+     "Bending loss measurement arrangement.",
+     "V-I characteristic study of LED as electro-optic converter.",
+     "Characteristics analysis of photodetectors."
+    ]
+   },
+   {
+    "title": "Performance Specifications",
+    "items": [
+     "Analog bandwidth: up to 350 kHz.",
+     "Digital bandwidth: up to 2.5 MHz.",
+     "Supports AM, FM, and PWM modulation techniques.",
+     "Full-duplex voice and data communication over optical fiber."
+    ]
+   },
+   {
+    "title": "Electrical & Operational Requirements",
+    "items": [
+     "Operates on 110–220 V AC ±10%, 50 Hz supply.",
+     "Power consumption: ~4.5 VA.",
+     "Built-in regulated power supply for internal modules."
+    ]
+   },
+   {
+    "title": "Experimental Capabilities",
+    "items": [
+     "Fiber optic analog and digital communication systems.",
+     "AM/FM/PWM modulation and demodulation techniques.",
+     "Loss analysis including propagation and bending losses.",
+     "Numerical aperture measurement.",
+     "Full-duplex RS232-based communication systems.",
+     "Optical transmitter and receiver characteristics.",
+     "Fault detection and troubleshooting in communication links."
+    ]
+   },
+   {
+    "title": "Learning Software Module",
+    "items": [
+     "Single-user classroom/laboratory teaching, learning, and simulation software module on Fiber Optic Communication."
+    ]
+   },
+   {
+    "title": "Coverage includes",
+    "items": [
+     "Basic laws of fiber optics",
+     "Types of fiber optics: single mode, multi-mode, step index, graded index",
+     "Attenuation principles",
+     "Optical sources: LED and LASER",
+     "Wavelength division multiplexing",
+     "Components of fiber optics",
+     "Fiber optic communication components: cables, connectors, etc."
+    ]
+   }
+  ]
+ }
+]
