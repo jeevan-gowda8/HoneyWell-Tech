@@ -1,17 +1,20 @@
 import { useEffect } from 'react'
 import { Link, usePath } from './lib/router'
-import Home from './pages/Home'
+import Landing from './pages/Landing'
+import Kits from './pages/Kits'
 import Kit from './pages/Kit'
 import Experiment from './pages/Experiment'
 
 function Page({ path }) {
   const [, root, kitId, expId] = path.split('/')
-  if (root !== 'kit' || !kitId) return <Home />
+  if (root === 'kits') return <Kits />
+  if (root !== 'kit' || !kitId) return <Landing />
   return expId ? <Experiment key={kitId} kitId={kitId} expId={expId} /> : <Kit key={kitId} kitId={kitId} />
 }
 
 export default function App() {
   const path = usePath()
+  const section = path.split('/')[1] || ''
   useEffect(() => { window.scrollTo(0, 0) }, [path])
   return (
     <>
@@ -21,6 +24,10 @@ export default function App() {
             <img src="./logo.png" alt="Honeywell Technologies" width="194" height="39" />
           </Link>
           <span className="top-note">Virtual Laboratory</span>
+          <nav className="top-nav" aria-label="Main">
+            <Link to="/" className={section === '' ? 'on' : ''} aria-current={section === '' ? 'page' : undefined}>Home</Link>
+            <Link to="/kits" className={section !== '' ? 'on' : ''} aria-current={section === 'kits' ? 'page' : undefined}>Kit Simulation</Link>
+          </nav>
         </div>
       </header>
       <Page path={path} />

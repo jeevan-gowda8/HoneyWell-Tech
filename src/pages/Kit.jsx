@@ -24,6 +24,17 @@ const Spec = ({ s }) => {
   return <li>{s}</li>
 }
 
+const Specs = ({ groups }) => groups ? (
+  <div className="spec-cols">
+    {groups.map((g, i) => (
+      <div className="spec" key={g.title + i}>
+        <h3>{g.title}</h3>
+        <ul>{g.items.map((s, j) => <Spec s={s} key={j} />)}</ul>
+      </div>
+    ))}
+  </div>
+) : <p className="loading">Loading specification…</p>
+
 export default function Kit({ kitId }) {
   const kit = findKit(kitId)
   const [groups, setGroups] = useState(null)
@@ -33,10 +44,10 @@ export default function Kit({ kitId }) {
     import('../data/specs.json').then((m) => { if (live) setGroups(m.default.find((s) => s.code === kit.code).groups) })
     return () => { live = false }
   }, [kit])
-  if (!kit) return <Navigate to="/" />
+  if (!kit) return <Navigate to="/kits" />
   return (
     <main className="wrap">
-      <nav className="crumbs" aria-label="Breadcrumb"><Link to="/">All kits</Link><span>/</span><b>{kit.name}</b></nav>
+      <nav className="crumbs" aria-label="Breadcrumb"><Link to="/kits">All kits</Link><span>/</span><b>{kit.name}</b></nav>
       <header className="kit-head">
         <div>
           <div className="kit-meta"><span className="code">{kit.code}</span><span className="dom">{kit.domain} · {kit.level}</span></div>
@@ -54,16 +65,7 @@ export default function Kit({ kitId }) {
 
       <section>
         <h2 className="sec">Specification</h2>
-        {groups ? (
-          <div className="spec-cols">
-            {groups.map((g, i) => (
-              <div className="spec" key={g.title + i}>
-                <h3>{g.title}</h3>
-                <ul>{g.items.map((s, j) => <Spec s={s} key={j} />)}</ul>
-              </div>
-            ))}
-          </div>
-        ) : <p className="loading">Loading specification…</p>}
+        <Specs groups={groups} />
       </section>
     </main>
   )

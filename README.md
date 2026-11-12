@@ -129,7 +129,7 @@ src/
     kits.js                Source list of kits, used to generate catalog.json
     catalog.js             Kit names and experiment titles for the catalog pages
     sims.js                Loads each kit's 3D simulation on demand
-  pages/                   Home (hero and kits), Kit (experiments), Experiment (simulation)
+  pages/                   Landing (software features), Kits (kit list), Kit (experiments), Experiment (simulation)
   components/
     Workbench.jsx          Runs any experiment: controls, clock, readings, table, result
     Graph.jsx              Chart for readings, fit and response curve
@@ -214,7 +214,7 @@ These are teaching models based on standard physics and the supplied specificati
 ## Design
 
 - Honeywell Technologies red (`#e20001`) on white, with Abril headings and Figtree text.
-- The home page hero is a full-screen photograph of a lab bench (`public/hero-lab.webp`, with a smaller version for phones) behind the headline.
+- The landing page (`#/`) explains the software's features with real screenshots from `public/land/`, over a full-screen lab photograph (`public/hero-lab.webp`). Its **Kit Simulation** button opens the kit list at `#/kits`, which leads to each kit and its simulations.
 - Every 3D scene uses the same light bench and wall, so all kits match the site theme.
 - View buttons, corner windows and cards share the red accent, rounded corners and soft shadows.
 

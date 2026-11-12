@@ -28,7 +28,7 @@ export default function Experiment({ kitId, expId }) {
     import('../data/sims').then((m) => m.loadExperiments(kit.code)).then((l) => { if (live) setList(l) }).catch(() => { if (live) setFailed(true) })
     return () => { live = false }
   }, [kit])
-  if (!kit) return <Navigate to="/" />
+  if (!kit) return <Navigate to="/kits" />
   const idx = kit.experiments.findIndex((e) => e.id === expId)
   if (idx < 0) return <Navigate to={`/kit/${kit.id}`} />
   const meta = kit.experiments[idx]
@@ -37,7 +37,7 @@ export default function Experiment({ kitId, expId }) {
   return (
     <main className="wrap lab">
       <nav className="crumbs" aria-label="Breadcrumb">
-        <Link to="/">All kits</Link><span>/</span><Link to={`/kit/${kit.id}`}>{kit.name}</Link><span>/</span><b>{meta.title}</b>
+        <Link to="/kits">All kits</Link><span>/</span><Link to={`/kit/${kit.id}`}>{kit.name}</Link><span>/</span><b>{meta.title}</b>
       </nav>
       <header className="lab-head">
         <div>

@@ -22,7 +22,7 @@ const FilterBtn = ({ on, onClick, label, n }) => (
   <button type="button" className={on ? 'on' : ''} aria-pressed={on} onClick={onClick}><span>{label}</span><small>{n}</small></button>
 )
 
-export default function Home() {
+export default function Kits() {
   const [q, setQ] = useState('')
   const [dom, setDom] = useState('All')
   const [level, setLevel] = useState('All')
@@ -35,17 +35,12 @@ export default function Home() {
   const clear = () => { setQ(''); setDom('All'); setLevel('All') }
   return (
     <main>
-      <section className="hero">
-        <img className="hero-bg" src="./hero-lab.webp" srcSet="./hero-lab-960.webp 960w, ./hero-lab.webp 1376w" sizes="100vw" alt="" width="1376" height="768" fetchPriority="high" />
-        <div className="wrap hero-in">
-          <div className="hero-copy">
-            <p className="eyebrow">Honeywell Technologies · Virtual Laboratory</p>
-            <h1>Laboratory kits you can operate in the browser</h1>
-            <p className="lede">Wire circuits, adjust instruments and record readings on working 3D models of each kit, then compare your result with the expected value.</p>
-            <div className="hero-actions">
-              <a className="cta" href="#/" onClick={(e) => { e.preventDefault(); document.getElementById('kits').scrollIntoView({ behavior: 'smooth' }) }}>Browse kits<Icon n="arrow" s={17} /></a>
-              <a className="cta cta-alt" href="#/kit/phyugex-61/series-resonance">Open a sample kit</a>
-            </div>
+      <section className="kits-head">
+        <div className="wrap kits-head-in">
+          <div>
+            <nav className="crumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><b>Kit Simulation</b></nav>
+            <h1>Kit Simulation</h1>
+            <p className="lede">Choose a kit to see its experiments and specification, then open an experiment to operate the kit in 3D.</p>
           </div>
           <dl className="stats">
             <div><dt>{KITS.length}</dt><dd>Kits</dd></div>
