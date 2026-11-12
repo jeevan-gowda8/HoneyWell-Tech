@@ -21,7 +21,7 @@ npm run build     # production build in dist/
 npm run preview   # serve the production build
 ```
 
-The build uses relative paths and hash routing, so `dist/` can be hosted from any static server or sub-folder without extra configuration.
+The site uses clean addresses with no `#`: `/` is the landing page, `/kits` the kit list, `/kits/<kit-name>` a kit (for example `/kits/air-wedge`) and `/kits/<kit-name>/<experiment>` a simulation. The server must answer unknown paths with `index.html`. The build also writes `dist/404.html`, which GitHub Pages, Netlify and most static hosts use for this. For Apache add `FallbackResource /index.html`; for nginx use `try_files $uri /index.html`. To host in a sub-folder, set `base` in `vite.config.js` (for example `/lab/`). Old `#/...` and `/kit/<code>` links redirect to the new addresses.
 
 ## The simulation page
 
@@ -135,7 +135,7 @@ src/
     Graph.jsx              Chart for readings, fit and response curve
     Micro.jsx              Particle views
   lib/
-    router.jsx             Minimal hash router
+    router.jsx             Minimal History API router (clean addresses)
     math.js                Fitting, peak finding, complex numbers, formatting
     parts.jsx              SVG drawing library used by the panels and fallbacks
   sims/
@@ -214,7 +214,7 @@ These are teaching models based on standard physics and the supplied specificati
 ## Design
 
 - Honeywell Technologies red (`#e20001`) on white, with Abril headings and Figtree text.
-- The landing page (`#/`) explains the software's features with real screenshots from `public/land/`, over a full-screen lab photograph (`public/hero-lab.webp`). Its **Kit Simulation** button opens the kit list at `#/kits`, which leads to each kit and its simulations.
+- The landing page (`/`) explains the software's features with real screenshots from `public/land/`, over a full-screen lab photograph (`public/hero-lab.webp`). Its **Kit Simulation** button opens the kit list at `/kits`, which leads to each kit and its simulations.
 - Every 3D scene uses the same light bench and wall, so all kits match the site theme.
 - View buttons, corner windows and cards share the red accent, rounded corners and soft shadows.
 
@@ -222,7 +222,7 @@ These are teaching models based on standard physics and the supplied specificati
 
 - React 19 and Vite 8.
 - three.js for the 3D kits, including `OrbitControls`, `RoomEnvironment` and `CSS3DRenderer`.
-- A small built-in hash router.
+- A small built-in History API router. Kit addresses use a slug of the kit name, generated in `scripts/catalog.mjs`.
 - Hand-written SVG and canvas for charts, panels, displays and particle views.
 - No routing, chart or UI library.
 

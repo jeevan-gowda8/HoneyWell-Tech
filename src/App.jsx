@@ -1,15 +1,20 @@
 import { useEffect } from 'react'
-import { Link, usePath } from './lib/router'
+import { Link, Navigate, pub, usePath } from './lib/router'
+import { findKit, kitPath } from './data/catalog'
 import Landing from './pages/Landing'
 import Kits from './pages/Kits'
 import Kit from './pages/Kit'
 import Experiment from './pages/Experiment'
 
 function Page({ path }) {
-  const [, root, kitId, expId] = path.split('/')
-  if (root === 'kits') return <Kits />
-  if (root !== 'kit' || !kitId) return <Landing />
-  return expId ? <Experiment key={kitId} kitId={kitId} expId={expId} /> : <Kit key={kitId} kitId={kitId} />
+  const [, root, key, expId] = path.split('/')
+  if (root === 'kit') { const k = key && findKit(key); return <Navigate to={k ? kitPath(k, expId) : '/kits'} /> }
+  if (root !== 'kits') return root ? <Navigate to="/" /> : <Landing />
+  if (!key) return <Kits />
+  const kit = findKit(key)
+  if (!kit) return <Navigate to="/kits" />
+  if (key !== kit.slug) return <Navigate to={kitPath(kit, expId)} />
+  return expId ? <Experiment key={kit.id} kitId={kit.id} expId={expId} /> : <Kit key={kit.id} kitId={kit.id} />
 }
 
 export default function App() {
@@ -21,7 +26,7 @@ export default function App() {
       <header className="top">
         <div className="wrap top-in">
           <Link to="/" className="brand" aria-label="Honeywell Technologies home">
-            <img src="./logo.png" alt="Honeywell Technologies" width="194" height="39" />
+            <img src={pub("logo.png")} alt="Honeywell Technologies" width="194" height="39" />
           </Link>
           <span className="top-note">Virtual Laboratory</span>
           <nav className="top-nav" aria-label="Main">
@@ -33,7 +38,7 @@ export default function App() {
       <Page path={path} />
       <footer className="foot">
         <div className="wrap foot-in">
-          <img src="./logo-white.png" alt="Honeywell Technologies" width="170" height="34" loading="lazy" />
+          <img src={pub("logo-white.png")} alt="Honeywell Technologies" width="170" height="34" loading="lazy" />
           <p>Simulations are teaching models based on the kit specifications and standard physics. Readings include small simulated measurement scatter.</p>
         </div>
       </footer>

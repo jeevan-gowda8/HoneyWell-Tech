@@ -1,4 +1,4 @@
-import { Link } from '../lib/router'
+import { Link, pub } from '../lib/router'
 import { DOMAINS, KITS, TOTAL_EXPERIMENTS } from '../data/catalog'
 import { Icon } from '../components/Icon'
 
@@ -10,14 +10,14 @@ const FEATURES = [
     h: 'Working 3D models of the real kits',
     p: 'Each kit is modelled on the trainer in the lab. Panels, sockets, knobs and switches sit where they do on the bench, so practice online carries straight over to the real equipment.',
     list: ['Drag to look around, or jump to a preset view', 'Turn knobs and trimmers, flip switches and press keys', 'Plug and pull patch cords between sockets'],
-    shots: [['./land/stage.webp', 'The AM modulation trainer board in 3D with patch cords and an oscilloscope trace', 1400, 787]],
+    shots: [[pub('land/stage.webp'), 'The AM modulation trainer board in 3D with patch cords and an oscilloscope trace', 1400, 787]],
   },
   {
     k: 'Live instruments',
     h: 'Instruments that respond as you work',
     p: 'Oscilloscopes, meters and spectrum displays update the moment a control changes. A controls column beside the kit gives precise sliders and buttons for the same settings.',
     list: ['Oscilloscope traces, meter readings and sideband spectra', 'Fine control with sliders, and a reset to the starting values', 'Pause the model or run it at ¼× or 3× speed'],
-    shots: [['./land/lcr.webp', 'The series and parallel LCR resonance kit with its meter and patched cords', 1400, 787], ['./land/controls.webp', 'The controls column with frequency, amplitude and waveform settings', 468, 999]],
+    shots: [[pub('land/lcr.webp'), 'The series and parallel LCR resonance kit with its meter and patched cords', 1400, 787], [pub('land/controls.webp'), 'The controls column with frequency, amplitude and waveform settings', 468, 999]],
     pair: 'side',
   },
   {
@@ -25,14 +25,14 @@ const FEATURES = [
     h: 'Record readings and build the observation table',
     p: 'Press Record reading at each setting, as you would write it in the lab record, or let Auto-collect sweep the range for you. The table keeps every reading with its units.',
     list: ['Record one reading at a time, or Auto-collect a full set', 'Download the table as a CSV file for your report', 'Readings carry a small, realistic measurement scatter'],
-    shots: [['./land/table.webp', 'The observation table with nine recorded readings and a CSV button', 797, 707]],
+    shots: [[pub('land/table.webp'), 'The observation table with nine recorded readings and a CSV button', 797, 707]],
   },
   {
     k: 'Analysis',
     h: 'A graph and a result checked against the expected value',
     p: 'Readings are plotted as they are recorded, with a best-fit line. The result card works out the final value and shows how far it is from the expected one.',
     list: ['Live graph with best-fit slope and R²', 'Calculated result with the percentage difference', 'Repeat with different settings and compare'],
-    shots: [['./land/graph.webp', 'Graph of modulation index against audio amplitude with a best-fit line', 1124, 707], ['./land/result.webp', 'Result card showing a slope of 0.997 against an expected 1.000', 1400, 187]],
+    shots: [[pub('land/graph.webp'), 'Graph of modulation index against audio amplitude with a best-fit line', 1124, 707], [pub('land/result.webp'), 'Result card showing a slope of 0.997 against an expected 1.000', 1400, 187]],
     pair: 'stack',
   },
   {
@@ -40,7 +40,7 @@ const FEATURES = [
     h: 'The theory sits beside the bench',
     p: 'Every experiment has its aim, principle, formula and procedure next to the kit. A particle view shows what happens inside the components, slowed down so you can watch it.',
     list: ['Aim, principle, formula and step-by-step procedure', 'Particle view of electrons, charge and fields', 'Hints on the kit tell you what to click or drag'],
-    shots: [['./land/guide.webp', 'The aim, principle, formula and procedure for series resonance', 1400, 363], ['./land/micro.webp', 'Particle view of a resistor, capacitor and inductor', 1400, 437]],
+    shots: [[pub('land/guide.webp'), 'The aim, principle, formula and procedure for series resonance', 1400, 363], [pub('land/micro.webp'), 'Particle view of a resistor, capacitor and inductor', 1400, 437]],
     pair: 'stack',
   },
 ]
@@ -70,7 +70,7 @@ export default function Landing() {
   return (
     <main className="lp">
       <section className="hero">
-        <img className="hero-bg" src="./hero-lab.webp" srcSet="./hero-lab-960.webp 960w, ./hero-lab.webp 1376w" sizes="100vw" alt="" width="1376" height="768" fetchPriority="high" />
+        <img className="hero-bg" src={pub('hero-lab.webp')} srcSet={`${pub('hero-lab-960.webp')} 960w, ${pub('hero-lab.webp')} 1376w`} sizes="100vw" alt="" width="1376" height="768" fetchPriority="high" />
         <div className="wrap hero-in">
           <div className="hero-copy">
             <p className="eyebrow">Honeywell Technologies · Virtual Laboratory</p>
@@ -78,7 +78,7 @@ export default function Landing() {
             <p className="lede">Wire circuits, adjust instruments and record readings on working 3D models of each kit, then compare your result with the expected value.</p>
             <div className="hero-actions">
               <Link to="/kits" className="cta">Kit Simulation<Icon n="arrow" s={17} /></Link>
-              <a className="cta cta-alt" href="#/" onClick={toFeatures}>See the features</a>
+              <a className="cta cta-alt" href="#features" onClick={toFeatures}>See the features</a>
             </div>
           </div>
           <dl className="stats">

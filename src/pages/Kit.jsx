@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate } from '../lib/router'
-import { findKit, thumb } from '../data/catalog'
+import { findKit, kitPath, thumb } from '../data/catalog'
 import { Rich } from '../components/Rich'
 import { Icon } from '../components/Icon'
 
 function ExpCard({ kit, exp, i }) {
   return (
-    <Link to={`/kit/${kit.id}/${exp.id}`} className="exp-card">
+    <Link to={kitPath(kit, exp)} className="exp-card">
       <div className="exp-art"><img src={thumb(kit, exp)} alt="" loading="lazy" decoding="async" width="560" height="350" /></div>
       <div className="exp-body">
         <span className="exp-no">Experiment {i + 1}</span>

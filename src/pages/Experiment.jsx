@@ -1,6 +1,6 @@
 import { Component, lazy, Suspense, useEffect, useState } from 'react'
 import { Link, Navigate } from '../lib/router'
-import { findKit } from '../data/catalog'
+import { findKit, kitPath } from '../data/catalog'
 import { Icon } from '../components/Icon'
 
 const Workbench = lazy(() => import('../components/Workbench'))
@@ -30,14 +30,14 @@ export default function Experiment({ kitId, expId }) {
   }, [kit])
   if (!kit) return <Navigate to="/kits" />
   const idx = kit.experiments.findIndex((e) => e.id === expId)
-  if (idx < 0) return <Navigate to={`/kit/${kit.id}`} />
+  if (idx < 0) return <Navigate to={kitPath(kit)} />
   const meta = kit.experiments[idx]
   const exp = list?.[idx]
   const prev = kit.experiments[idx - 1], next = kit.experiments[idx + 1]
   return (
     <main className="wrap lab">
       <nav className="crumbs" aria-label="Breadcrumb">
-        <Link to="/kits">All kits</Link><span>/</span><Link to={`/kit/${kit.id}`}>{kit.name}</Link><span>/</span><b>{meta.title}</b>
+        <Link to="/kits">All kits</Link><span>/</span><Link to={kitPath(kit)}>{kit.name}</Link><span>/</span><b>{meta.title}</b>
       </nav>
       <header className="lab-head">
         <div>
@@ -45,14 +45,14 @@ export default function Experiment({ kitId, expId }) {
           <h1>{meta.title}</h1>
         </div>
         <div className="lab-nav">
-          {prev && <Link className="nav-btn" to={`/kit/${kit.id}/${prev.id}`} aria-label={`Previous: ${prev.title}`}><Icon n="back" s={16} />Previous</Link>}
-          {next && <Link className="nav-btn" to={`/kit/${kit.id}/${next.id}`} aria-label={`Next: ${next.title}`}>Next<Icon n="arrow" s={16} /></Link>}
+          {prev && <Link className="nav-btn" to={kitPath(kit, prev)} aria-label={`Previous: ${prev.title}`}><Icon n="back" s={16} />Previous</Link>}
+          {next && <Link className="nav-btn" to={kitPath(kit, next)} aria-label={`Next: ${next.title}`}>Next<Icon n="arrow" s={16} /></Link>}
         </div>
       </header>
       {kit.experiments.length > 1 && (
         <div className="exp-tabs">
           {kit.experiments.map((e, i) => (
-            <Link key={e.id} to={`/kit/${kit.id}/${e.id}`} className={i === idx ? 'on' : ''} aria-current={i === idx ? 'page' : undefined}><b>{i + 1}</b>{e.title}</Link>
+            <Link key={e.id} to={kitPath(kit, e)} className={i === idx ? 'on' : ''} aria-current={i === idx ? 'page' : undefined}><b>{i + 1}</b>{e.title}</Link>
           ))}
         </div>
       )}

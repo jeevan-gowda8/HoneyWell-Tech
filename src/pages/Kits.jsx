@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react'
 import { Link } from '../lib/router'
-import { DOMAINS, KITS, LEVELS, TOTAL_EXPERIMENTS, thumb } from '../data/catalog'
+import { DOMAINS, KITS, LEVELS, TOTAL_EXPERIMENTS, kitPath, thumb } from '../data/catalog'
 import { Icon } from '../components/Icon'
 
 function KitCard({ kit }) {
   const n = kit.experiments.length
   return (
-    <Link to={`/kit/${kit.id}`} className="kit-card">
+    <Link to={kitPath(kit)} className="kit-card">
       <div className="kit-art"><img src={thumb(kit, kit.experiments[0])} alt="" loading="lazy" decoding="async" width="560" height="350" /></div>
       <div className="kit-body">
         <div className="kit-meta"><span className="code">{kit.code}</span><span className="dom">{kit.domain}</span></div>
