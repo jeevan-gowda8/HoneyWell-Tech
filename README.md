@@ -2,7 +2,7 @@
 
 An interactive virtual laboratory for the sample items in `Specs_33_Sample_Items_Print.docx`. It is built with React, Vite and three.js, uses a light-only theme in the Honeywell Technologies red and white, and runs every kit as an interactive 3D simulation.
 
-There are **31 kits** and **103 experiments**. The Raspberry Pi 5 and FPGA kits from the Word file have been removed.
+There are **31 kits** and **101 experiments**. The Raspberry Pi 5 and FPGA kits from the Word file have been removed.
 
 The site works in three steps:
 
@@ -67,15 +67,15 @@ Each model is built from the reference picture of the kit, with its front panels
 | PhyUGEx-250 | Seebeck and Peltier Effect | Heat sinks change colour with temperature, and swapping the leads reverses the heat flow. |
 | PhyUGEx-256, PhyPGEx-17 | Franck–Hertz | Neon tube with orange glow layers, four knobs, MODE keys, sensors and logger. |
 | PhyUGEx-262 | Lissajous Figures | Sloped trainer and CRO with draggable patch cords and a live X-Y display. |
-| PhyUGEx-268 | Operational Amplifier Trainer | Generator keys and knobs, V₁ and V₂ supplies, µA741 chips and movable resistor and capacitor plugs, with input and output traces. |
+| PhyUGEx-268 | Operational Amplifier Trainer | Modelled on the real black panel: ±5 V, ±12 V and variable supplies, resistor, diode and capacitor banks, two µA741 sockets, breadboard, function generator and eight pots. Click a generator OUTPUT socket for sine, square or triangle, and drag the ringed plugs between banks. |
 | PhyUGEq-1 | Dual Regulated DC Power Supply | Working keypad, encoder, STEP, CH A/B, OUTPUT and POWER. Channel A drives a rheostat and channel B a 4.9 Ω resistor. |
 | PhyUGEx-242 | Full Adder and Subtractor | The full wireable logic panel in a 3D case, with input switches, LEDs and displays. |
 | PhyPGEx-32 | Ultrasonic Interferometer | Liquid cell with micrometer and standing waves, analogue µA meter and 1/2/3 MHz keys. The distance unit has transducers and a draggable target. |
 | PhyPGEx-61 | Curie Temperature | Kettle heating, probe thermometer with HOLD, and the two-display kit unit. |
 | PhyPGEx-103 | Zeeman Effect | Electromagnet with Hg lamp, optical bench with a movable L2 lens, polarizer, power supply and Gauss meter. A camera window shows the rings. |
 | PhyPGEx-114 | Millikan's Oil Drop | Atomizer, field plates, LED, voltage knob, FIELD REVERSE, stop clock and a monitor with the tracked drop. |
-| EleEq-37 | AM Modulation Trainer | Transmitter and receiver boards with telescopic antennas, patch cords, tuning dial, level knobs, fault DIP switches and a CH1 probe. |
-| EleEq-47 | Fiber Optic Trainer | Tx and Rx unit with live fibre, bend mandrel, cable spools, NA jig and fault test points. |
+| EleEq-37 | AM Modulation & Demodulation Trainer | The real green trainer board on a wooden stand: AF, RF and audio pre-amp generators, three balanced modulators, a balanced demodulator, SSB block, 1 MHz power and pre amplifiers, 455 kHz and 1 MHz band-pass filters and an audio power amplifier. Blue preset trimmers, SW1 carrier select, FAULT SW2 with 8 faults, block status LEDs, a telescopic antenna and live patch cords. |
+| EleEq-47 | Fiber Optic Trainer | Modelled on the real black panel: two emitters and two detectors joined by the fibre, FM and PWM modulators, comparators, filters, PLL, AC amplifiers and audio output. Click an emitter for 660 or 950 nm, use the SW3 and SW4 fault switches, and read results on a bench multimeter. |
 
 The Network Theorems, LCR and Full Adder panels are the original wireable panels shown inside a 3D instrument case with `CSS3DRenderer`, so every socket, cord and switch keeps working. Wiring is most accurate from the Front view.
 
@@ -112,7 +112,7 @@ The Network Theorems, LCR and Full Adder panels are the original wireable panels
 | PhyPGEx-62 | B–H Curve: Hard and Soft | 4 |
 | PhyPGEx-103 | Zeeman Effect | 2 |
 | PhyPGEx-114 | Millikan's Oil Drop | 2 |
-| EleEq-37 | AM Modulation Trainer | 7 |
+| EleEq-37 | AM Modulation & Demodulation Trainer | 5 |
 | EleEq-47 | Fiber Optic Trainer | 8 |
 
 Where the Word file lists functional or experimental capabilities, those became the experiments. Where it gives only a title and a hardware list, experiments were chosen to fit that hardware.
@@ -206,7 +206,7 @@ These are teaching models based on standard physics and the supplied specificati
 - **Dual DC supply:** channel B can be set from the keypad, but readings and Record use channel A.
 - **Curie temperature** reads the secondary in mV to match the kit display.
 - **Ultrasonic interferometer** offers 1, 2 and 3 MHz crystals, and FREQ ADJ must be at the centre to record.
-- **AM trainer:** the fault DIP switches set faults F1 to F15. F16 is available from the controls.
+- **AM trainer:** a single board, with no superheterodyne receiver. The face is the bench board drawing rendered to `src/sims/am-board.webp`. Click the supply LEDs to switch it on and off. FAULT SW2 sets faults F1–F8. SW1 must be at 1M for the DSB experiments and at 455k for SSB. SSB demodulation uses the board's balanced demodulator; the recovered tone is the sent tone plus the carrier offset.
 - **LCR panel** follows the photo of the kit (0.01 µF, 0.1 µF, 750 Ω, 1 kΩ, 100 mH, 200 mH, up to 1 MHz, 10 V p-p), which differs from the Word file's 8 Vpp and 1/10/60 kHz ranges. It assumes a 600 Ω generator output, a 15 Ω inductor winding, printed links between adjacent sockets, and a meter across R in series use and in the line in parallel use.
 - **Full Adder panel** follows the photo. The breadboard is drawn but not patchable. Gate outputs are 3.4 V high and 0.2 V low, and clocks above 1 Hz show as a dimmed LED.
 - **Network panel** follows the kit picture. Each block's internal source is isolated, V is 12 V in the Thevenin and maximum power blocks, the LOAD RL stepper values are added controls, the Tellegen bridge values are assumed, and the ammeter has a 0.1 Ω shunt.
@@ -214,7 +214,7 @@ These are teaching models based on standard physics and the supplied specificati
 ## Design
 
 - Honeywell Technologies red (`#e20001`) on white, with Abril headings and Figtree text.
-- The home page hero shows an animated oscilloscope with sample results instead of a photograph.
+- The home page hero is a full-screen photograph of a lab bench (`public/hero-lab.webp`, with a smaller version for phones) behind the headline.
 - Every 3D scene uses the same light bench and wall, so all kits match the site theme.
 - View buttons, corner windows and cards share the red accent, rounded corners and soft shadows.
 
@@ -235,4 +235,4 @@ These are teaching models based on standard physics and the supplied specificati
 
 ## Testing
 
-All 103 experiments were run automatically against the production build, recording a full Auto-collect series in each. All of them completed without page errors, and every computed result was within 5% of its expected value. Pages were also checked at phone width for horizontal overflow. The automated runs used software (SwiftShader) graphics in headless Chrome. Real browsers with a graphics card render the scenes much faster.
+All experiments were run automatically against the production build, recording a full Auto-collect series in each. All of them completed without page errors, and every computed result was within 5% of its expected value. Pages were also checked at phone width for horizontal overflow. The automated runs used software (SwiftShader) graphics in headless Chrome. Real browsers with a graphics card render the scenes much faster.

@@ -120,69 +120,27 @@ const envCalc = (v, m = 0.6) => {
   }
   return { out, dist: (Math.sqrt(err / N) / m) * 100 }
 }
-const envelope = {
-  id: 'envelope-detector', title: 'Envelope detection', short: 'RC time constant', aim: 'Recover the audio from a DSB-FC wave with the diode detector and find the limits of the RC time constant.', formula: 'RC < √(1 − m²) / (ω_m m)', principle: 'The capacitor follows the peaks of the carrier. If RC is too long it cannot follow the falling envelope, which causes diagonal clipping.', steps: ['Apply the modulated input.', 'Increase RC.', 'Watch for clipping on the output.', 'Note the largest RC giving a clean output.'],
-  controls: [num('rc', 'Time constant RC', 10, 800, 10, 100, 'µs'), num('m', 'Modulation index', 0.2, 0.9, 0.05, 0.6)],
-  out: (v) => envCalc(v, v.m),
-  Stage: ({ v, o }) => (
-    <Board title="AM RECEIVER · ENVELOPE DETECTOR">
-      <Chain blocks={['RF in', 'Tuned amp', 'Diode', 'RC filter', 'Audio']} active={[2, 3, 4]} />
-      <Scope x={36} y={118} w={728} h={268} title="DETECTOR" n={500} tr={[{ f: (u) => (1 + v.m * Math.cos(TAU * 2 * u)) * 0.55 - 0.55, l: 'Envelope' }, { f: (u) => o.out[Math.floor(u * 899.99)] * 0.55 - 0.55, l: 'Output' }]} />
-      <Lcd x={40} y={420} w={230} value={v.rc} unit="µs" label="RC" /><Lcd x={285} y={420} w={230} value={o.dist.toFixed(1)} unit="%" label="Error" /><Lcd x={530} y={420} w={230} value={((Math.sqrt(1 - v.m ** 2) / (TAU * 1000 * v.m)) * 1e6).toFixed(0)} unit="µs" label="RC limit at 1 kHz" />
-    </Board>
-  ),
-  read: (v, o) => [['Tracking error', o.dist.toFixed(1), '%']],
-  columns: [['rc', 'RC (µs)', 0], ['e', 'Error (%)', 2]],
-  sample: (v, o) => ({ rc: v.rc, e: o.dist }),
-  sweep: { k: 'rc', n: 20, from: 10, to: 800 },
-  graph: { x: 'rc', y: 'e', xl: 'Time constant RC (µs)', yl: 'Tracking error (%)' },
-  analyse: (r, v) => [['Theoretical RC limit', (Math.sqrt(1 - v.m ** 2) / (TAU * 1000 * v.m)) * 1e6, 'µs'], ['Largest clean RC (error under 5%)', Math.max(0, ...r.filter((x) => x.e < 5).map((x) => x.rc)), 'µs']],
-}
-const ST = [[1000, 'Station A'], [1400, 'Station B'], [1800, 'Station C']]
-const tune = (f) => ST.reduce((s, [c]) => Math.max(s, 1 / (1 + sq((f - c) / 8))), 0)
-const superhet = {
-  id: 'superheterodyne', title: 'Superheterodyne receiver tuning', short: 'Dial through the band', aim: 'Tune the receiver across the medium wave range and confirm the 455 kHz intermediate frequency.', formula: 'f_LO = f_RF + 455 kHz', principle: 'The mixer converts each station to a fixed intermediate frequency, so the same high-gain IF stages serve the entire tuning range.', steps: ['Turn the frequency dial.', 'Note the audio level at each setting.', 'Identify the stations.', 'Compute the LO frequency.'],
-  controls: [num('f', 'RF tuning dial', 980, 2060, 2, 1100, 'kHz')],
-  out: (v) => ({ a: tune(v.f), lo: v.f + 455 }),
+const ssbDemod = {
+  id: 'ssb-demodulation', title: 'SSB demodulation', short: 'Balanced demodulator',
+  aim: 'Recover the audio from an SSB-SC signal with the balanced demodulator, and see how an error in the re-inserted carrier shifts the pitch.',
+  formula: 'f_out = f_m + Δf_c',
+  principle: 'The balanced demodulator multiplies the SSB signal by a locally re-inserted carrier. With that carrier exactly on the suppressed carrier the original tone returns. Any offset shifts every audio frequency by the same amount, which is why mistuned SSB voices sound high or low.',
+  steps: ['Generate SSB-SC through Balanced Modulator 1 and the 455 kHz BPF.', 'Patch the BPF output to SIGNAL IN and the RF carrier to CARRIER on the balanced demodulator.', 'Set the carrier offset away from zero in steps.', 'Plot the recovered frequency against the carrier offset.'],
+  controls: [num('fm', 'Audio frequency', 300, 3400, 100, 1000, 'Hz'), num('df', 'Carrier offset', -500, 500, 10, 0, 'Hz')],
+  out: (v) => ({ fo: Math.max(0, v.fm + v.df) }),
   Stage: ({ v, o, t }) => (
-    <Board title="SUPERHETERODYNE RECEIVER">
-      <Chain blocks={['Antenna', 'RF amp', 'Mixer', 'LO', 'IF1 455k', 'IF2 455k', 'Detector', 'Audio']} active={o.a > 0.3 ? [0, 1, 2, 3, 4, 5, 6, 7] : [0, 1, 2, 3]} />
-      <Panel x={36} y={118} w={728} h={110} t="TUNING DIAL" sub="kHz" />
-      <rect x="60" y="164" width="680" height="40" rx="6" fill={C.lcd} stroke="#B9C5A0" />
-      {Array.from({ length: 12 }, (_, i) => { const f = 1000 + i * 100, x = 60 + ((f - 980) / 1080) * 680; return f <= 2060 && <g key={i}><line x1={x} x2={x} y1="164" y2="176" stroke={C.lcdInk} /><T x={x} y={196} s={11} a="middle" c={C.lcdInk}>{f}</T></g> })}
-      <line x1={60 + ((v.f - 980) / 1080) * 680} x2={60 + ((v.f - 980) / 1080) * 680} y1="158" y2="210" stroke={C.t2} strokeWidth="3" />
-      <Scope x={36} y={240} w={500} h={228} title="AUDIO OUTPUT" tr={[{ f: (u) => o.a * 0.8 * Math.sin(TAU * 5 * u + t * 5) }]} />
-      <Panel x={548} y={240} w={216} h={228} t="SIGNALS" /><Lcd x={560} y={284} w={192} h={40} value={v.f} unit="kHz" label="RF" s={18} /><Lcd x={560} y={346} w={192} h={40} value={o.lo} unit="kHz" label="Local osc" s={18} /><Lcd x={560} y={408} w={192} h={40} value={o.lo - v.f} unit="kHz" label="IF" s={18} />
+    <Board title="AM TRAINER · BALANCED DEMODULATOR">
+      <Chain blocks={['SSB in', 'Bal. demod', 'Carrier 455k', 'LPF', 'Audio']} active={[0, 1, 2, 3, 4]} />
+      <Scope x={36} y={118} w={728} h={268} title="RECOVERED AUDIO" n={600} tr={[{ f: (u) => 0.85 * Math.sin(TAU * (o.fo / 1000) * 3 * u + t * 2), l: 'Output' }, { f: (u) => 0.5 * Math.sin(TAU * (v.fm / 1000) * 3 * u + t * 2), l: 'Sent' }]} />
+      <Lcd x={40} y={420} w={230} value={v.fm} unit="Hz" label="Sent tone" /><Lcd x={285} y={420} w={230} value={v.df} unit="Hz" label="Carrier offset" /><Lcd x={530} y={420} w={230} value={o.fo} unit="Hz" label="Recovered" />
     </Board>
   ),
-  read: (v, o) => [['Audio level', o.a.toFixed(3), ''], ['LO', o.lo, 'kHz']],
-  columns: [['f', 'Dial (kHz)', 0], ['a', 'Audio', 3]],
-  sample: (v, o) => ({ f: v.f, a: wobble(o.a, 0.003) }),
-  sweep: { k: 'f', n: 136, from: 980, to: 2060 }, need: 30,
-  graph: { x: 'f', y: 'a', xl: 'Dial (kHz)', yl: 'Relative audio level', zero: false, curve: () => curve(tune, 980, 2060, 540), live: (v) => [v.f, tune(v.f)] },
-  analyse: (r) => { const p = peaks(r, 'f', 'a', 3, 0.5); return [['Stations found', String(p.length), ''], ['Tuned at', p.map((x) => x.f.toFixed(0)).join(', ') || '—', 'kHz']] },
-}
-const agcCalc = (Vin, on) => (on ? 0.8 * Math.pow(Vin / 100, 0.08) : Math.min(1.8, Vin * 0.018))
-const agc = {
-  id: 'agc', title: 'Automatic gain control', short: 'Level stabilisation', aim: 'Show how AGC stabilises the audio level as the received signal strength varies.', formula: 'V_out ≈ constant with AGC on', principle: 'A voltage derived from the detector lowers the IF gain for strong signals. Output stays nearly the same as the input changes.', steps: ['Switch AGC off.', 'Vary the RF input.', 'Switch AGC on and repeat.', 'Compare the two.'],
-  controls: [num('V', 'RF input level', 1, 100, 1, 20, 'µV'), tog('on', 'AGC on', true)],
-  out: (v) => ({ out: agcCalc(v.V, v.on) }),
-  Stage: ({ v, o, t }) => (
-    <Board title="AM RECEIVER · AGC">
-      <Chain blocks={['RF amp', 'Mixer', 'IF amp', 'Detector', 'Audio']} active={[0, 1, 2, 3, 4]} />
-      {v.on && <Wire d="M630,102 V120 H300 V102" on t={t} c={C.t3} />}
-      {v.on && <T x={465} y={136} s={11} a="middle" c={C.t3} w={600}>AGC feedback</T>}
-      <Scope x={36} y={150} w={500} h={318} title="AUDIO" tr={[{ f: (u) => (o.out / 1.8) * 0.95 * Math.sin(TAU * 4 * u + t * 3) }]} />
-      <Panel x={548} y={150} w={216} h={318} t="LEVEL" /><Lcd x={560} y={200} w={192} value={v.V} unit="µV" label="RF input" /><Lcd x={560} y={280} w={192} value={o.out.toFixed(3)} unit="V" label="Audio" />
-      <Led x={656} y={400} on={v.on} c={C.green} l="AGC" r={12} />
-    </Board>
-  ),
-  read: (v, o) => [['Audio', o.out.toFixed(3), 'V']],
-  columns: [['V', 'V_in (µV)', 0], ['o', 'Output (V)', 3], ['m', 'AGC', 0]],
-  sample: (v, o) => ({ V: v.V, o: wobble(o.out, 0.002), m: v.on ? 'On' : 'Off' }),
-  sweep: { k: 'V', n: 10 },
-  graph: { x: 'V', y: 'o', xl: 'RF input (µV)', yl: 'Audio output (V)' },
-  analyse: (r) => { const o = r.map((x) => x.o); return [['Output variation', ((Math.max(...o) - Math.min(...o)) / Math.max(...o)) * 100, '%']] },
+  read: (v, o) => [['Recovered tone', o.fo.toFixed(0), 'Hz'], ['Pitch error', v.df.toFixed(0), 'Hz']],
+  columns: [['df', 'Δf (Hz)', 0], ['fo', 'f_out (Hz)', 0]],
+  sample: (v, o) => ({ df: v.df, fo: wobble(o.fo, 2) }),
+  sweep: { k: 'df', n: 11 },
+  graph: { x: 'df', y: 'fo', xl: 'Carrier offset (Hz)', yl: 'Recovered frequency (Hz)', fit: true, zero: false },
+  analyse: (r, v) => { const f = fit(r, 'df', 'fo'); return f && [['Slope', f.m, '', 1], ['Tone at zero offset', f.c, 'Hz', v.fm]] },
 }
 /* Fault-finding exercise: a hidden fault breaks the chain at one block. */
 const faultExp = (blocks, cnt, title, prefix) => {
@@ -217,7 +175,7 @@ const faultExp = (blocks, cnt, title, prefix) => {
     },
   }
 }
-export const amKit = [dsbfc, dsbsc, ssb, envelope, superhet, agc, faultExp(['Audio', 'Carrier', 'Bal Mod', 'BPF', 'RF amp', 'Mixer', 'IF1', 'IF2', 'Detector'], 16, 'AM TRAINER · FAULT SIMULATION', 'TP')]
+export const amKit = [dsbfc, dsbsc, ssb, ssbDemod, faultExp(['AF gen', 'RF gen', 'Bal Mod', '455k BPF', 'Bal Demod', 'Audio amp'], 8, 'AM TRAINER · FAULT SIMULATION', 'TP')]
 
 /* ---------- Optical fibre trainer (EleEq-47) ---------- */
 const N1 = 1.492, N2 = 1.406, NAF = Math.sqrt(N1 * N1 - N2 * N2)

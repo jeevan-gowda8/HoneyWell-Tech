@@ -18,31 +18,6 @@ function KitCard({ kit }) {
   )
 }
 
-const wave = (n, amp, cyc, w = 1200, h = 220) => { let d = ''; for (let i = 0; i <= n; i++) { const x = (i / n) * w, y = h / 2 - amp * Math.sin((i / n) * cyc * Math.PI * 2) * (0.8 + 0.2 * Math.cos((i / n) * Math.PI * 2 * 2)); d += `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}` } return d }
-const W1 = wave(400, 70, 12), W2 = wave(400, 34, 6)
-function HeroViz() {
-  return (
-    <div className="hero-viz" aria-hidden="true">
-      <div className="hv-orbit" />
-      <div className="hv-scope">
-        <div className="hv-top"><i />LIVE SIMULATION · 3D KIT<b>CH1</b></div>
-        <div className="hv-screen">
-          <svg viewBox="0 0 600 220" preserveAspectRatio="none">
-            {Array.from({ length: 11 }, (_, i) => <line key={'v' + i} x1={i * 60} x2={i * 60} y1="0" y2="220" stroke="#1d3c31" strokeWidth={i === 5 ? 1.6 : 1} />)}
-            {Array.from({ length: 5 }, (_, i) => <line key={'h' + i} x1="0" x2="600" y1={i * 55} y2={i * 55} stroke="#1d3c31" strokeWidth={i === 2 ? 1.6 : 1} />)}
-            <g className="hv-wave2"><path d={W2} fill="none" stroke="#ffc14d" strokeWidth="2.4" /></g>
-            <g className="hv-wave"><path d={W1} fill="none" stroke="#62e6c2" strokeWidth="3" style={{ filter: 'drop-shadow(0 0 4px #62e6c2)' }} /></g>
-          </svg>
-        </div>
-        <div className="hv-knobs"><span /><span /><span /><em>1.4550 MHz</em></div>
-      </div>
-      <div className="hv-chip a"><span>Brewster angle</span><b>56.5°</b><small>0.3% off expected</small></div>
-      <div className="hv-chip b"><span>Electron charge</span><b>1.602 × 10<sup>−19</sup> C</b><small>0.0% off expected</small></div>
-      <div className="hv-chip c"><span>Sodium D line</span><b>λ 589.3 nm</b><small>Within 0.1%</small></div>
-    </div>
-  )
-}
-
 const FilterBtn = ({ on, onClick, label, n }) => (
   <button type="button" className={on ? 'on' : ''} aria-pressed={on} onClick={onClick}><span>{label}</span><small>{n}</small></button>
 )
@@ -61,20 +36,22 @@ export default function Home() {
   return (
     <main>
       <section className="hero">
-        <svg className="hero-mark" viewBox="0 0 211 226" aria-hidden="true"><path d="M0,0H71V78H140V0H211V106H0Z M0,133H71V226H0Z M140,133H211V226H140Z" /></svg>
+        <img className="hero-bg" src="./hero-lab.webp" srcSet="./hero-lab-960.webp 960w, ./hero-lab.webp 1376w" sizes="100vw" alt="" width="1376" height="768" fetchPriority="high" />
         <div className="wrap hero-in">
-          <div>
-            <p className="eyebrow">Honeywell Technologies Virtual Laboratory</p>
+          <div className="hero-copy">
+            <p className="eyebrow">Honeywell Technologies · Virtual Laboratory</p>
             <h1>Laboratory kits you can operate in the browser</h1>
-            <p className="lede">Wire circuits, adjust instruments and record readings on working simulations of each kit, then compare your result with the expected value.</p>
-            <a className="cta" href="#/" onClick={(e) => { e.preventDefault(); document.getElementById('kits').scrollIntoView({ behavior: 'smooth' }) }}>Browse kits<Icon n="arrow" s={17} /></a>
-            <dl className="stats">
-              <div><dt>{KITS.length}</dt><dd>Kits</dd></div>
-              <div><dt>{TOTAL_EXPERIMENTS}</dt><dd>Experiments</dd></div>
-              <div><dt>{DOMAINS.length}</dt><dd>Disciplines</dd></div>
-            </dl>
+            <p className="lede">Wire circuits, adjust instruments and record readings on working 3D models of each kit, then compare your result with the expected value.</p>
+            <div className="hero-actions">
+              <a className="cta" href="#/" onClick={(e) => { e.preventDefault(); document.getElementById('kits').scrollIntoView({ behavior: 'smooth' }) }}>Browse kits<Icon n="arrow" s={17} /></a>
+              <a className="cta cta-alt" href="#/kit/phyugex-61/series-resonance">Open a sample kit</a>
+            </div>
           </div>
-          <HeroViz />
+          <dl className="stats">
+            <div><dt>{KITS.length}</dt><dd>Kits</dd></div>
+            <div><dt>{TOTAL_EXPERIMENTS}</dt><dd>Experiments</dd></div>
+            <div><dt>{DOMAINS.length}</dt><dd>Disciplines</dd></div>
+          </dl>
         </div>
       </section>
 

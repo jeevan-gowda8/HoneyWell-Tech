@@ -56,7 +56,7 @@ const defs = [
   ['PhyPGEx-62', 'B–H Curve: Hard and Soft', 'Magnetism', 'Compare U–I cores of mild steel and CRNGO with a 12-bit data logger.', bhHardSoft],
   ['PhyPGEx-103', 'Zeeman Effect', 'Modern Physics', 'Split spectral rings with a Fabry–Perot etalon and an electromagnet.', zeeman],
   ['PhyPGEx-114', 'Millikan’s Oil Drop', 'Modern Physics', 'Balance charged oil drops and reveal the elementary charge.', millikan],
-  ['EleEq-37', 'AM Modulation Trainer', 'Communication', 'A full AM transmitter and superheterodyne receiver with switched faults.', amKit],
+  ['EleEq-37', 'AM Modulation & Demodulation Trainer', 'Communication', 'The AM trainer board: AF and RF generators, three balanced modulators, a balanced demodulator, SSB block, 455 kHz and 1 MHz filters and 8 switched faults.', amKit],
   ['EleEq-47', 'Fiber Optic Trainer', 'Communication', 'Analog and digital links over PMMA fibre, with loss and fault exercises.', ofcKit],
 ]
 

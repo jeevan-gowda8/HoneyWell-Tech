@@ -65,9 +65,7 @@ const am = {
   'dsb-fc': (v, o, t) => conductor(Math.sin(t * 9) * (1 + o.m * Math.sin(t * 1.2)) * 0.55, 0.25, 'Electrons in the antenna', 'Electrons surge back and forth at the carrier rate, in bursts that follow the audio.'),
   'dsb-sc': (v, o, t) => conductor(Math.sin(t * 9) * Math.sin(t * 1.2), 0.25, 'Electrons in the antenna', 'With no carrier, the electron motion falls to zero whenever the audio crosses zero.'),
   'ssb-sc': (v, o, t) => conductor(Math.sin(t * 7) * 0.8, 0.25, 'Electrons in the filter output', 'A single sideband gives a steady oscillation at one frequency.'),
-  'envelope-detector': (v, o, t) => ({ scene: 'junction', mode: 'plain', i: clamp(0.5 + v.m * Math.sin(t * 2), 0, 1.2), color: '#F59E0B', title: 'Electrons crossing the diode', note: 'The diode lets electrons through in one direction only, leaving the envelope of the signal.' }),
-  superheterodyne: (v, o, t) => conductor(Math.sin(t * 8) * o.a, 0.25, 'Electrons in the tuned circuit', 'Current only builds up when the dial matches a station.'),
-  agc: (v, o, t) => conductor(Math.sin(t * 6) * clamp(o.out / 1.4, 0, 1), 0.25, 'Electrons in the audio stage', 'AGC holds the electron swing steady as the signal level changes.'),
+  'ssb-demodulation': (v, o, t) => conductor(Math.sin(t * 6 * (o.fo / 1000 + 0.2)) * 0.8, 0.25, 'Electrons in the speaker coil', 'The recovered tone drives the speaker. A BFO offset changes how fast the electrons swing, so the pitch moves.'),
 }
 const faultFn = (v, o, t) => conductor(o.ok ? Math.sin(t * 6) * 0.8 : 0, 0.25, 'Electrons at the test point', 'A faulty stage stops the signal, so the electrons stop surging.')
 const lamCol = (v) => (v.l === 950 ? '#8B5CF6' : '#E5484D')

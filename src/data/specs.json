@@ -1569,12 +1569,12 @@
  {
   "no": 32,
   "code": "EleEq-37",
-  "title": "AmplitudeModulation& Demodulation Trainer Kit",
+  "title": "Amplitude Modulation & Demodulation Trainer Kit",
   "groups": [
    {
     "title": "General System Architecture & Enclosure",
     "items": [
-     "Complete bench-top educational training platform designed for undergraduate engineering and physics laboratories to study the complete transmission and reception chain of analog communication.",
+     "Complete bench-top educational training platform designed for undergraduate engineering and physics laboratories to study amplitude modulation and demodulation.",
      "High-grade, multi-color mimic diagram on the front panel with clearly labeled functional blocks, standard circuit schematics, expected test waveforms, and signal flow paths.",
      "Front Panel Visual Indicators: Real-time LED status indicators showing active carrier paths, functional block selection, and signal flow direction.",
      "Built-in Transducers & Audio I/O: Integrated condenser microphone with pre-amplifier, 3.5 mm external microphone/audio input jack, 3.5 mm earphone output jack, and an on-board loudspeaker with volume control for voice communication experiments.",
@@ -1585,45 +1585,25 @@
     "title": "Modulation Transmitter Section",
     "items": [
      "Audio Modulating Signal Generator: On-board variable audio frequency sine-wave oscillator covering 300 Hz / 400 Hz to at least 3.4 kHz, with independent continuous amplitude and frequency controls.",
-     "RF Carrier Generator: Stable crystal/transistor oscillator generating a 1 MHz sinusoidal carrier signal with low harmonic distortion."
-    ]
-   },
-   {
-    "title": "Modulator Stages",
-    "items": [
-     "Minimum two balanced modulators with output bandpass filtering at 1 MHz for Double Sideband Suppressed Carrier (DSB-SC) and Double Sideband Full Carrier (DSB-FC) generation.",
+     "RF Carrier Generator: Stable crystal/transistor oscillator generating a 1 MHz sinusoidal carrier signal with low harmonic distortion.",
+     "Modulator Stages: Minimum two balanced modulators with output bandpass filtering at 1 MHz for Double Sideband Suppressed Carrier (DSB-SC) and Double Sideband Full Carrier (DSB-FC) generation.",
      "One balanced modulator with center frequency around 450 kHz to 455 kHz for Single Sideband (SSB) generation.",
      "Filter Circuits: On-board ceramic bandpass filter centered at 455 kHz (±2 kHz) to achieve precise Single Sideband Suppressed Carrier (SSB-SC) filtering.",
      "Transmission Antenna: Adjustable multi-section telescopic antenna mounted on the transmitter panel to support low-power wireless radiation of generated AM signals."
     ]
    },
    {
-    "title": "Superheterodyne Receiver",
+    "title": "Demodulator Section",
     "items": [
-     "Tuned RF Amplifier",
-     "Active RF Mixer",
-     "Local Oscillator (LO)",
-     "Beat Frequency Oscillator (BFO) for SSB signal recovery",
-     "Multi-stage Intermediate Frequency (IF) amplifiers: First IF amplifier stage and Second IF amplifier stage tuned at standard 455 kHz",
-     "Frequency Coverage: RF tuning range covering standard Medium Wave (MW) broadcast frequencies from at least 980 kHz to 2060 kHz.",
-     "Manual Tuning Mechanism: Variable ganged tuning capacitor with a calibrated front-panel frequency dial for station/carrier tuning."
+     "Balanced demodulator (synchronous detector) with SIGNAL IN, CARRIER and DEMOD OUT sockets for recovering DSB-SC and SSB-SC signals.",
+     "Audio power amplifier with volume control and on-board loudspeaker output for listening to the recovered audio."
     ]
    },
    {
-    "title": "Demodulation Stages",
-    "items": [
-     "Envelope / Simple Diode Detector for standard DSB-FC envelope recovery.",
-     "Product Detector / Synchronous Detector with BFO carrier re-insertion for SSB-SC signal recovery.",
-     "Automatic Gain Control (AGC): Switchable AGC circuit to demonstrate signal level stabilization and fading prevention.",
-     "Reception Medium: Telescopic antenna mounted directly on the panel along with an external RF input connector for direct coaxial link testing."
-    ]
-   },
-   {
-    "title": "Test Points",
+    "title": "Diagnostics, Fault Simulation & Signal Observation",
     "items": [
      "Transmitter Section: Minimum 20 insulated 2 mm shrouded banana sockets/test points for multi-channel oscilloscope probing across carrier generation, audio amplification, and balanced modulator stages.",
-     "Receiver Section: Minimum 30 insulated 2 mm shrouded banana sockets/test points for stage-by- stage probing (RF out, mixer out, LO out, IF1, IF2, detector out, AGC feedback, and audio pre-amp out).",
-     "Fault Simulation Facility: Built-in hardware fault switches (minimum 8 independent switched faults per module, or ≥ 16 faults total across transmitter and receiver) enabling instructor-led hardware troubleshooting and student fault-diagnosis exercises."
+     "Fault Simulation Facility: Built-in hardware fault switches (8 independent switched faults) enabling instructor-led hardware troubleshooting and student fault-diagnosis exercises."
     ]
    },
    {
@@ -1636,9 +1616,9 @@
    {
     "title": "Scope of Supply & Documentation",
     "items": [
-     "1 × Amplitude Modulation & Demodulation Trainer Unit (integrated or modular dual-board setup).",
+     "1 × Amplitude Modulation & Demodulation Trainer Unit.",
      "1 × Set of color-coded 2 mm patch cords for signal routing and interconnection.",
-     "1 × Telescopic antenna for transmitter and receiver.",
+     "1 × Telescopic antenna for the transmitter.",
      "1 × Pair of stereo earphones / headphones with 3.5 mm jack.",
      "1 × Mains power cable."
     ]
